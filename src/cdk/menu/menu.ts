@@ -2,6 +2,7 @@ import Regular from 'regularjs';
 
 import template from './menu.html';
 import styles from './menu.scss';
+import * as _ from 'lodash';
 
 const dom = Regular.dom;
 
@@ -19,7 +20,8 @@ export const Menu = Regular.extend({
 
             const menu = this.data.menu.map(function (menuItem) {
                 const tmp = {
-                    selected: selected.indexOf(menuItem.key) !== -1
+                    selected: selected.indexOf(menuItem.key) !== -1,
+                    children: []
                 };
 
                 if (menuItem.children) {

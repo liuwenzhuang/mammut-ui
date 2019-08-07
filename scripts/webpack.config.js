@@ -2,24 +2,23 @@ const path = require('path');
 const basePath = path.resolve(__dirname, '../');
 
 module.exports = {
-    entry: path.join(basePath, 'doc/index.js'),
+    entry: path.join(basePath, 'doc/index.ts'),
     output: {
         path: path.resolve(basePath, 'dist'),
         filename: '[name].bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.html', '.css']
+        extensions: ['.ts', '.js', '.html', '.css']
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    reportFiles: [
+                        'src/**/*.{ts,tsx}'
+                    ]
                 }
             },
             {
