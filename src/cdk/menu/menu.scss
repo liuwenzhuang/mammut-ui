@@ -1,0 +1,42 @@
+@import "assets/scss/mixins/list.mixin";
+
+.menu {
+    position: absolute;
+
+    &, li {
+        box-sizing: content-box;
+        list-style: none;
+    }
+
+    &, :local(.children) {
+        @include list-wrap;
+    }
+}
+
+.parent:before {
+    @include list-item-expand-icon;
+}
+
+.item {
+    @include list-item;
+}
+
+.children {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 100%;
+    display: none;
+    margin-left: -3px;
+
+    &:global(.pull-left) {
+        left: unset;
+        right: 100%;
+        margin-right: -3px;
+    }
+
+    &:global(.pull-up) {
+        top: unset;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,5 @@
+<div
+        class="{styles.item}"
+        r-class="{{'has-children': item.children !== undefined, 'active': selected === item.value, 'disabled': item.disabled}}"
+        on-click="{this.handleClick($event, item, index)}"
+>{item.label}</div>

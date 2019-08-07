@@ -1,0 +1,16 @@
+<div class="{size} {styles.inputWrap} ui-cdk-input-wrap">
+    <input
+            ref="input"
+            type="{type}"
+            class="{styles.input} ui-cdk-input"
+            name="{name}"
+            id="{id}"
+            r-class="{{'disabled': disabled, 'active': active, 'error': error}}"
+            r-model="{value}"
+            on-click="{this.handleClick($event)}"
+            {#if disabled}disabled{/if}
+    >
+    {#if showTriangle}
+    <i class="{styles.triangle}" r-class="{{'active': active}}"></i>
+    {/if}
+</div>

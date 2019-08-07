@@ -1,0 +1,36 @@
+<ul class="{styles.menu}" r-class={{'has-desc':hasDesc}} ref="menu">
+    {#list menu as item}
+    {#if item.children && item.children.length}
+    <li class="{styles.item} {styles.parent}"
+        r-class="{{'disabled': item.disabled, 'selected': item.selected}}"
+        on-mouseenter="{this.checkBoundary(item_index)}"
+        on-mousedown="{this.click($event, item)}">{item.title}
+        <ul class="{styles.children}" ref="{'children' + item_index}">
+            {#list item.children as childrenItem}
+            {#if childrenItem.title}
+            <li class="{styles.item}"
+                r-class="{{'disabled': childrenItem.disabled}}"
+                on-mousedown="{this.click($event, childrenItem)}">
+                <span>{childrenItem.title}</span>
+                <span class="{styles.desc}">{childrenItem.desc}</span>
+            </li>
+            {#elseif childrenItem.divider}
+            <li class="{styles.divider}"></li>
+            {/if}
+            {/list}
+        </ul>
+    </li>
+    {#else}
+    {#if item.title}
+    <li class="{styles.item}"
+        r-class="{{'disabled':item.disabled, 'has-desc':item.desc, 'selected': item.selected}}"
+        on-mousedown="{this.click($event, item)}">
+        <span> {item.title}</span>
+        <span class="{styles.desc}">{item.desc}</span>
+    </li>
+    {#elseif item.divider}
+    <li class="{styles.divider}"></li>
+    {/if}
+    {/if}
+    {/list}
+</ul>

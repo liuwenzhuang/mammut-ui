@@ -1,0 +1,28 @@
+@import "assets/scss/mixins/list.mixin";
+
+.cascader {
+
+}
+
+.menu {
+    position: absolute;
+    min-height: 200px;
+    display: flex;
+}
+
+.item {
+    @include list-item;
+
+    &:global(.has-children):before {
+        @include list-item-expand-icon;
+    }
+
+    &:global(.disabled):before {
+        border-left-color: #999999;
+    }
+}
+
+
+:global(.ui-cdk-list + .ui-cdk-list) {
+    border-left: none;
+}

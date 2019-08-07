@@ -1,0 +1,28 @@
+<div class="{styles.cascader}" ref="wrap">
+    <ui-cdk-input
+            ref="input"
+            size="{size}"
+            value="{displayText}"
+            disabled="{disabled}"
+            showTriangle="{true}"
+            active="{menuVisible}"
+            on-click="{this.handleShowMenu($event)}"
+    ></ui-cdk-input>
+    {#if menuVisible}
+    <ui-cdk-overlay on-mousedown="{this.handleHideMenu()}">
+        <div class="{styles.menu}" r-style="{position}">
+            {#list showOptions as item}
+            <ui-cdk-list
+                    styles="{styles}"
+                    itemTpl="{itemTemplate}"
+                    options="{item}"
+                    index="{item_index}"
+                    selected="{selected[item_index]}"
+                    on-mousedown="{this.handleMousedown($event)}"
+                    on-click="{this.handleClickItem($event)}"
+            ></ui-cdk-list>
+            {/list}
+        </div>
+    </ui-cdk-overlay>
+    {/if}
+</div>

@@ -1,0 +1,12 @@
+<ui-cdk-overlay
+        ref="overlay"
+        disabledScroll="{!scrollHide}"
+        on-mousedown="{this.handleOverlayMousedown($event)}"
+        on-scroll="{this.handleOverlayScroll($event)}"
+>
+    <ui-cdk-menu
+            ref="menu"
+            menu="{menu}"
+            on-click="{this.handleMenuClick($event)}"
+    ></ui-cdk-menu>
+</ui-cdk-overlay>

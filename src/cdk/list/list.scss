@@ -1,0 +1,5 @@
+@import "assets/scss/mixins/list.mixin";
+
+.list {
+    @include list-wrap;
+}

@@ -1,0 +1,54 @@
+@mixin list-wrap {
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 6px 0;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.06)
+}
+
+@mixin list-item {
+    position: relative;
+    height: 32px;
+    padding-right: 54px;
+    padding-left: 10px;
+
+    line-height: 32px;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    white-space: nowrap;
+
+    user-select: none;
+
+    &:global(.disabled) {
+        cursor: not-allowed;
+        color: #999;
+
+        &:hover {
+            background-color: #fff;
+        }
+
+        &:hover :local(.children) {
+            display: none;
+        }
+    }
+
+    &:hover, &:global(.selected), &:global(.active) {
+        background-color: #d0e8fe;
+
+        :local(.children) {
+            display: block;
+        }
+    }
+}
+
+@mixin list-item-expand-icon {
+    position: absolute;
+    top: 12px;
+    right: 9px;
+    display: block;
+    content: "";
+    border-width: 4px 0 4px 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #68747f;
+}

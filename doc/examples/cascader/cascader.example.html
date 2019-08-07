@@ -1,0 +1,24 @@
+<div class="doc-wrap">
+    <div class="doc-sidebar"><MarkdownDoc url="/src/components/cascader/cascader.md"></MarkdownDoc></div>
+    <div class="doc-main">
+        <ExamplePreview header="基本" body="{['省市区级联选择']}">
+            <ui-cascader options="{options}"></ui-cascader>
+        </ExamplePreview>
+
+        <ExamplePreview header="默认值" body="{['省市区级联选择', '设置 selected(数组) 定义默认选中值']}">
+            <ui-cascader options="{options}" selected="{['zhejiang', 'hangzhou', 'xihu']}"></ui-cascader>
+        </ExamplePreview>
+
+        <ExamplePreview header="禁用某些选项" body="{['省市区级联选择', '给选项设置 disabled 可以禁用选项']}">
+            <ui-cascader options="{hasDisabledOptions}"></ui-cascader>
+        </ExamplePreview>
+
+        <ExamplePreview header="禁用级联组件" body="{['省市区级联选择', '给组件设置 disabled 可以禁用组件']}">
+            <ui-cascader options="{options}" disabled></ui-cascader>
+        </ExamplePreview>
+
+        <ExamplePreview header="自定义显示内容" body="{['省市区级联选择', '传入 displayRender 函数用于计算显示的内容, 函数的参数为选择的选项数组', '默认使用 / 相连接']}">
+            <ui-cascader options="{options}" displayRender="{this.render}"></ui-cascader>
+        </ExamplePreview>
+    </div>
+</div>
