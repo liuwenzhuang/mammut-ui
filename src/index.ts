@@ -14,4 +14,5 @@ export { Input } from './cdk/input/input';
 // components
 export { PopupMenu } from './components/popupMenu/popupMenu';
 export { Cascader } from './components/cascader/cascader';
+export { Checkbox } from './components/checkbox/checkbox';
 export { Tooltip, TooltipComponent } from './components/tooltip/tooltip';

@@ -1,13 +1,14 @@
 import Regular from 'regularjs';
 
+import examplePreviewTemplate from './example-preview.html';
 import template from './examples.html';
 import styles from './examples.scss';
-import examplePreviewTemplate from './example-preview.html';
 
+import { CascaderExample } from './cascader/cascader.example';
+import { CheckboxExample } from './checkboxx/checkbox.example';
 import { MenuExample } from './menu/menu.example';
 import { OverlayExample } from './overlay/overlay.example';
 import { PopupMenuExample } from './popupMenu/popupMenu.example';
-import { CascaderExample } from './cascader/cascader.example';
 import { ToolTipExample } from './tooltip/tooltip.example';
 
 const Nav = Regular.extend({
@@ -44,6 +45,9 @@ export const ExampleRoutes = {
     },
     'examples.cascader': {
         view: CascaderExample
+    },
+    'examples.checkbox': {
+        view: CheckboxExample
     },
     'examples.tooltip': {
         view: ToolTipExample

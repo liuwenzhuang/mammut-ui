@@ -11,3 +11,5 @@
 - [Cascader](http://localhost:8444/examples/cascader)
 
 - [Tooltip](http://localhost:8444/examples/tooltip)
+
+- [Checkbox](http://localhost:8444/examples/checkbox)
