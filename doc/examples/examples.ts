@@ -1,11 +1,11 @@
 import Regular from 'regularjs';
 
-import examplePreviewTemplate from './example-preview.html';
 import template from './examples.html';
 import styles from './examples.scss';
+import './example-previvew/example-preview'
 
 import { CascaderExample } from './cascader/cascader.example';
-import { CheckboxExample } from './checkboxx/checkbox.example';
+import { CheckboxExample } from './checkbox/checkbox.example';
 import { MenuExample } from './menu/menu.example';
 import { OverlayExample } from './overlay/overlay.example';
 import { PopupMenuExample } from './popupMenu/popupMenu.example';
@@ -13,11 +13,6 @@ import { ToolTipExample } from './tooltip/tooltip.example';
 
 const Nav = Regular.extend({
     template: '<MarkdownDoc url="/doc/examples/nav.md"></MarkdownDoc>'
-});
-
-Regular.extend({
-    name: 'ExamplePreview',
-    template: examplePreviewTemplate
 });
 
 export const ExampleMain = Regular.extend({

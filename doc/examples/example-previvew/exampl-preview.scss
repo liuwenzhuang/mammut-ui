@@ -1,0 +1,27 @@
+.doc-example {
+    position: relative;
+    margin-bottom: 24px;
+    border: 1px solid #DEDEDE;
+}
+
+.doc-example-preview {
+    width: 100%;
+    padding: 42px 24px 50px;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+
+.doc-example-document {
+    font-size: 14px;
+
+    header {
+        position: absolute;
+        margin: -10px 0 0 24px;
+        font-weight: bold;
+        background-color: #fff;
+    }
+
+    main {
+        padding: 24px;
+    }
+}

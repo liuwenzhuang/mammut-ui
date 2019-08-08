@@ -1,0 +1,38 @@
+<div class="doc-wrap">
+    <div class="doc-sidebar"><MarkdownDoc url="/src/components/checkbox/checkbox.md"></MarkdownDoc></div>
+    <div class="doc-main">
+        <ExamplePreview>
+            <Example.Main>
+                <p><ui-checkbox>未选中</ui-checkbox></p>
+                <p><ui-checkbox checked>默认选中</ui-checkbox></p>
+                <p><ui-checkbox disabled>未选中时禁用</ui-checkbox></p>
+                <p><ui-checkbox checked disabled>选中时禁用</ui-checkbox></p>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    基本使用
+                </header>
+                <main>
+                    无
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <p><ui-checkbox checked="{checked}" on-change="{this.onChange($event)}">{#if !checked}未{/if}选中</ui-checkbox></p>
+                <p>当前选中状态 checked: {checked}</p>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    change 方法
+                </header>
+                <main>
+                    抛出当前的选中状态
+                </main>
+            </Example.details>
+        </ExamplePreview>
+    </div>
+</div>

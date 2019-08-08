@@ -1,18 +1,17 @@
-import Regular from 'regularjs';
 import template from './checkbox.html';
 import styles from './checkbox.scss';
+import { RegularX } from 'RegularX';
 
-interface Props {
-
+export interface CheckboxProps {
+    checked: boolean;
+    disabled: boolean;
 }
 
 interface State {
-    checked: boolean;
-    disabled: boolean;
-    inline: boolean;
+    styles: any
 }
 
-class Checkbox1 {
+class CheckboxComponent extends RegularX<CheckboxProps & State> {
     template = template;
     name = 'ui-checkbox';
 
@@ -23,15 +22,12 @@ class Checkbox1 {
         styles: styles
     };
 
-    config(data) {
-        this.data.styles = styles;
+    handleClick() {
+        if (this.data.disabled) return;
+
+        this.data.checked = !this.data.checked;
+        this.$emit('change', this.data.checked);
     }
 }
 
-const toRegular = function toRegular(component: any) {
-    const componentInstance = new component();
-
-    return Object.assign({}, componentInstance, componentInstance.__proto__);
-};
-
-export const Checkbox = Regular.extend(toRegular(Checkbox1));
+export const Checkbox = RegularX.extend(CheckboxComponent);
