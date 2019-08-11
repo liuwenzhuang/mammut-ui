@@ -31,14 +31,16 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.scss$/,
                 use: [{
-                    loader: miniCssExtractPlugin.loader // 生成 css 文件
+                    loader: 'style-loader' // 将 JS 字符串生成为 style 节点
                 }, {
                     loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
                     options: {
-                        modules: true,
-                        localIdentName: '[local]--[hash:base64:5]'
+                        modules: {
+                            mode: 'local',
+                            localIdentName: '[local]--[hash:base64:5]'
+                        }
                     }
                 }, {
                     loader: 'sass-loader', // 将 Sass 编译成 CSS
