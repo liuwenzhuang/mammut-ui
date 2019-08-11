@@ -4,7 +4,7 @@
 ## 示例
 
 ```html
-<ui-cdk-overlay on-mousedown="{...}" on-scroll="{...}">overlay</ui-overlay>
+<ui-cdk-overlay on-mousedown="{...}" on-scroll="{...}">overlay</ui-cdk-overlay>
 ```
 
 ## 传入参数
