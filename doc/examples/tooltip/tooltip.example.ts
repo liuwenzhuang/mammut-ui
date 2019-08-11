@@ -6,7 +6,8 @@ import { RegularT } from 'regularts';
 class TooltipExampleComponent extends RegularT {
     template = template;
     data = {
-        styles
+        styles,
+        tooltip: `{#if flag}flag=true{/if}`
     };
 }
 

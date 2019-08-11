@@ -4,7 +4,13 @@
     </div>
     <div class="doc-main">
         <ExamplePreview header="基本使用" body="{['通过 hover 触发 tooltip 显示']}">
-            <ui-tooltip title="tooltip" placement="right">
+            <ui-tooltip title="{tooltip}" placement="right" flag>
+                <span class="{styles.question}">?</span>
+            </ui-tooltip>
+        </ExamplePreview>
+
+        <ExamplePreview header="根据数据动态显示" body="{['传入 regular 模板, 动态显示数据']}">
+            <ui-tooltip title="{tooltip}" placement="right" flag>
                 <span class="{styles.question}">?</span>
             </ui-tooltip>
         </ExamplePreview>
