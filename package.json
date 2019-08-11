@@ -1,6 +1,6 @@
 {
   "name": "@bdms-fe/components",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "bdms fe components",
   "main": "dist/components.js",
   "scripts": {
