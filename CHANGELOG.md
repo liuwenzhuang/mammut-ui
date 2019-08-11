@@ -1,3 +1,12 @@
+## [0.2.2](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.1...v0.2.2) (2019-08-11)
+
+
+### Bug Fixes
+
+* 修复 tooltip 移动到内部元素时浮层隐藏问题 ([9811095](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/9811095))
+
+
+
 ## [0.2.1](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.0...v0.2.1) (2019-08-11)
 
 
