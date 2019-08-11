@@ -1,3 +1,12 @@
+## [0.2.1](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.0...v0.2.1) (2019-08-11)
+
+
+### Bug Fixes
+
+* 添加发布前打包指令 ([b2e49ed](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/b2e49ed))
+
+
+
 # [0.2.0](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.1.0...v0.2.0) (2019-08-11)
 
 
