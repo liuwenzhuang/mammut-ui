@@ -1,5 +1,5 @@
 import { RegularT } from 'regularts';
-import RegularJs from 'regularjs';
+import Regular from 'regularjs';
 import template from './tooltip.html';
 import styles from './tooltip.scss';
 
@@ -16,10 +16,35 @@ export interface TooltipProps {
 export interface TooltipStats {
 }
 
-const TooltipContext = RegularJs.extend({
+const TooltipContext = Regular.extend({
     template: `<div ref="context" class="{styles.tooltipContext} tooltip-{placement}">{#include title}</div>`,
     data: {
         styles
+    },
+    init() {
+        this.bindEvent();
+    },
+    destroy() {
+        this.offEvent();
+        this.supr();
+    },
+    bindEvent() {
+        const contextRef: HTMLDivElement = this.$refs['context'];
+        this.mouseenterHandle = () => {
+            this.$emit('enter');
+        };
+        this.mouseenterOut = () => {
+            this.$emit('out');
+        };
+
+        contextRef.addEventListener('mouseenter', this.mouseenterHandle);
+        contextRef.addEventListener('mouseout', this.mouseenterOut);
+    },
+    offEvent() {
+        const contextRef: HTMLDivElement = this.$refs['context'];
+
+        contextRef.removeEventListener('mouseenter', this.mouseenterHandle);
+        contextRef.removeEventListener('mouseout', this.mouseenterOut);
     },
     $show(position: ClientRect) {
         const {placement} = this.data;
@@ -49,7 +74,7 @@ const TooltipContext = RegularJs.extend({
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         const top = position.top + (position.height - contextRef.offsetHeight) / 2;
-        const left = position.left + - (contextRef.offsetWidth + 8);
+        const left = position.left + -(contextRef.offsetWidth + 8);
 
         contextRef.style.top = `${top}px`;
         contextRef.style.left = `${left}px`;
@@ -107,17 +132,31 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
             data
         });
         this.tooltipContext.$inject(document.body);
+
+        this.tooltipContext.$on('enter', () => {
+            this.clearTimer();
+        });
+
+        this.tooltipContext.$on('out', () => {
+            this.hideTooltip();
+        })
     }
 
-    public init(data?: TooltipProps & TooltipStats): void {
+    init(data?: TooltipProps & TooltipStats) {
         this.tooltipWrapRef = this.$refs['wrap'];
         this.initEvent();
     }
 
+    destroy() {
+        this.tooltipContext.destroy();
+        this.offEvent();
+        this.supr();
+    }
+
     initEvent() {
         const {trigger} = this.data;
-        this.showTooltipHandle = ($event) => {
-            this.showTooltip($event);
+        this.showTooltipHandle = () => {
+            this.showTooltip();
         };
         this.hideTooltipHandle = () => {
             this.hideTooltip();
@@ -133,13 +172,35 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
         }
     }
 
-    showTooltip($event) {
-        const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
+    offEvent() {
+        const {trigger} = this.data;
 
+        switch (trigger) {
+            case 'click':
+                break;
+            case 'hover':
+                this.tooltipWrapRef.removeEventListener('mouseenter', this.showTooltipHandle);
+                this.tooltipWrapRef.removeEventListener('mouseout', this.hideTooltipHandle);
+                break;
+        }
+    }
+
+    clearTimer() {
         if (this.hideTooltipTimer) {
             clearTimeout(this.hideTooltipTimer);
             this.hideTooltipTimer = null;
         }
+
+        if (this.showTooltipTimer) {
+            clearTimeout(this.showTooltipTimer);
+            this.showTooltipTimer = null;
+        }
+    }
+
+    showTooltip() {
+        const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
+
+        this.clearTimer();
 
         this.showTooltipTimer = setTimeout(() => {
             this.tooltipContext.$show(wrapPosition);
@@ -147,12 +208,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
     }
 
     hideTooltip() {
-        const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
-
-        if (this.showTooltipTimer) {
-            clearTimeout(this.showTooltipTimer);
-            this.showTooltipTimer = null;
-        }
+        this.clearTimer();
 
         this.hideTooltipTimer = setTimeout(() => {
             this.tooltipContext.$hide();
