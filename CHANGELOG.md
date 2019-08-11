@@ -1,3 +1,12 @@
+## [0.2.4](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.3...v0.2.4) (2019-08-11)
+
+
+### Bug Fixes
+
+* **scss:** box-sizing 去掉 :after, :before 元素的设置 ([92ea473](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/92ea473))
+
+
+
 ## [0.2.3](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.2...v0.2.3) (2019-08-11)
 
 
