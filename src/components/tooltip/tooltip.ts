@@ -17,12 +17,13 @@ export interface TooltipStats {
 }
 
 const TooltipContext = Regular.extend({
-    template: `<div ref="context" class="{styles.tooltipContext} tooltip-{placement}">{#include title}</div>`,
+    template: `<div ref="context" class="hook-tooltip-context {styles.tooltipContext} tooltip-{placement}">{#include title}</div>`,
     data: {
         styles
     },
     init() {
         this.bindEvent();
+        this.$hide();
     },
     destroy() {
         this.offEvent();
@@ -139,7 +140,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
 
         this.tooltipContext.$on('out', () => {
             this.hideTooltip();
-        })
+        });
     }
 
     init(data?: TooltipProps & TooltipStats) {
@@ -155,10 +156,14 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
 
     initEvent() {
         const {trigger} = this.data;
-        this.showTooltipHandle = () => {
+        this.showTooltipHandle = ($event: MouseEvent) => {
             this.showTooltip();
         };
-        this.hideTooltipHandle = () => {
+        this.hideTooltipHandle = ($event: MouseEvent) => {
+            if (this.tooltipWrapRef.contains($event.relatedTarget as Node)) {
+                return;
+            }
+
             this.hideTooltip();
         };
 
@@ -198,12 +203,18 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
     }
 
     showTooltip() {
-        const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
-
         this.clearTimer();
 
         this.showTooltipTimer = setTimeout(() => {
+            const {visible} = this.data;
+
+            if (visible) {
+                return;
+            }
+
+            const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
             this.tooltipContext.$show(wrapPosition);
+            this.data.visible = true;
         }, 100);
     }
 
@@ -212,6 +223,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
 
         this.hideTooltipTimer = setTimeout(() => {
             this.tooltipContext.$hide();
+            this.data.visible = false;
         }, 100);
     }
 }
