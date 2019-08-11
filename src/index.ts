@@ -1,9 +1,9 @@
 import './assets/scss/index.scss';
 
 // init RegularT
-import RegularJs from 'regularjs';
+import Regular from 'regularjs';
 import { RegularT } from 'regularts';
-RegularT.setRegular(RegularJs);
+RegularT.setRegular(Regular);
 
 // cdk component
 export { Overlay } from './cdk/overlay/overlay';

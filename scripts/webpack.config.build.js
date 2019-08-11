@@ -1,10 +1,10 @@
 const path = require('path');
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const basePath = path.resolve(__dirname, '../');
 
 module.exports = {
-    entry: path.join(basePath, 'src/index.js'),
+    entry: path.join(basePath, 'src/index.ts'),
     output: {
         path: path.resolve(basePath, 'lib'),
         filename: 'mammut-ui.js',
@@ -16,38 +16,43 @@ module.exports = {
         regularjs: 'Regular'
     },
     resolve: {
-        extensions: ['.js', '.html', '.css']
+        extensions: ['.ts', '.js', '.html', '.css']
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    reportFiles: [
+                        'src/**/*.{ts,tsx}'
+                    ]
                 }
             },
             {
                 test: /\.scss$/,
-                use: [{
-                    loader: 'style-loader' // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
-                    options: {
-                        modules: {
-                            mode: 'local',
-                            localIdentName: '[local]--[hash:base64:5]'
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development',
+                        },
+                    },
+                    {
+                        loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[local]--[hash:base64:5]'
+                            }
                         }
-                    }
-                }, {
-                    loader: 'sass-loader', // 将 Sass 编译成 CSS
-                    options: {
-                        includePaths: [path.join(basePath, 'src')]
-                    }
-                }]
+                    },
+                    {
+                        loader: 'sass-loader', // 将 Sass 编译成 CSS
+                        options: {
+                            includePaths: [path.join(basePath, 'src')]
+                        }
+                    }]
             },
             {
                 test: /\.(html)$/,
@@ -58,7 +63,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new miniCssExtractPlugin({
+        new MiniCssExtractPlugin({
             filename: 'mammut-ui.css'
         })
     ],

@@ -2,6 +2,7 @@ const path = require('path');
 const basePath = path.resolve(__dirname, '../');
 
 module.exports = {
+    stats: 'minimal',
     entry: path.join(basePath, 'doc/index.ts'),
     output: {
         path: path.resolve(basePath, 'dist'),
