@@ -8,10 +8,9 @@
 
 ## API
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| title | 提示文案 | string&verbar;RegularTemplate | |
-| placement | 文字提示位置 | top&verbar;right&verbar;bottom&verbar;left | top |
-| visible | 显性控制浮层的显示 | boolean | false |
-| onChangeVisible | 显示隐藏的回调 | (visible) => void | |
+| 参数 | 说明 | 类型 | 默认值 | 实现状态 |
+| --- | --- | --- | --- | --- |
+| title | 提示文案 | string&verbar;RegularTemplate | | 是 |
+| placement | 文字提示位置 | top&verbar;right&verbar;bottom&verbar;left | top | 是 |
+| trigger | 浮层触发条件 | hover\|click | hover | 否 |
 
