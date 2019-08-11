@@ -34,18 +34,21 @@ const TooltipContext = Regular.extend({
         this.mouseenterHandle = () => {
             this.$emit('enter');
         };
-        this.mouseenterOut = () => {
+        this.mouseoutHandle = ($event: MouseEvent) => {
+            if (contextRef && contextRef.contains($event.relatedTarget as Node)) {
+                return;
+            }
             this.$emit('out');
         };
 
         contextRef.addEventListener('mouseenter', this.mouseenterHandle);
-        contextRef.addEventListener('mouseout', this.mouseenterOut);
+        contextRef.addEventListener('mouseout', this.mouseoutHandle);
     },
     offEvent() {
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         contextRef.removeEventListener('mouseenter', this.mouseenterHandle);
-        contextRef.removeEventListener('mouseout', this.mouseenterOut);
+        contextRef.removeEventListener('mouseout', this.mouseoutHandle);
     },
     $show(position: ClientRect) {
         const {placement} = this.data;
