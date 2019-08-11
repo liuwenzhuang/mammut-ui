@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config scripts/webpack.config.js",
     "build": "rm -rf & webpack --config scripts/webpack.config.build.js",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "prepublish": "npm run build"
   },
   "files": [
     "lib"
