@@ -1,3 +1,12 @@
+## [0.2.3](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.2...v0.2.3) (2019-08-11)
+
+
+### Bug Fixes
+
+* **tooltip:** tootip 内容的 mouseout 事件添加内部元素判断 ([0f5562c](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/0f5562c))
+
+
+
 ## [0.2.2](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.1...v0.2.2) (2019-08-11)
 
 
