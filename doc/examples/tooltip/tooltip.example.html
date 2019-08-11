@@ -1,0 +1,38 @@
+<div class="doc-wrap">
+    <div class="doc-sidebar">
+        <MarkdownDoc url="/src/components/tooltip/tooltip.md"></MarkdownDoc>
+    </div>
+    <div class="doc-main">
+        <ExamplePreview header="基本使用" body="{['通过 hover 触发 tooltip 显示']}">
+            <ui-tooltip title="tooltip" placement="right">
+                <span>hover this</span>
+            </ui-tooltip>
+        </ExamplePreview>
+
+        <ExamplePreview header="设置方向" body="{['通过 placement = left|right|top|bottom 设置浮层显示的位置']}">
+            <p style="margin-bottom: 16px">
+                <ui-tooltip title="left" placement="left">
+                    <span>left</span>
+                </ui-tooltip>
+            </p>
+
+            <p style="margin-bottom: 16px">
+                <ui-tooltip title="right" placement="right">
+                    <span>right</span>
+                </ui-tooltip>
+            </p>
+
+            <p style="margin-bottom: 16px">
+                <ui-tooltip title="top" placement="top">
+                    <span>top</span>
+                </ui-tooltip>
+            </p>
+
+            <p style="margin-bottom: 16px">
+                <ui-tooltip title="bottom" placement="bottom">
+                    <span>bottom</span>
+                </ui-tooltip>
+            </p>
+        </ExamplePreview>
+    </div>
+</div>

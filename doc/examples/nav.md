@@ -9,3 +9,5 @@
 - [PopupMenu](http://localhost:8444/examples/popup-menu)
 
 - [Cascader](http://localhost:8444/examples/cascader)
+
+- [Tooltip](http://localhost:8444/examples/tooltip)

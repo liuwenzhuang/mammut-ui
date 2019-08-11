@@ -4,10 +4,11 @@ import template from './examples.html';
 import styles from './examples.scss';
 import examplePreviewTemplate from './example-preview.html';
 
-import {MenuExample} from './menu/menu.example';
-import {OverlayExample} from './overlay/overlay.example';
-import {PopupMenuExample} from './popupMenu/popupMenu.example';
-import {CascaderExample} from './cascader/cascader.example';
+import { MenuExample } from './menu/menu.example';
+import { OverlayExample } from './overlay/overlay.example';
+import { PopupMenuExample } from './popupMenu/popupMenu.example';
+import { CascaderExample } from './cascader/cascader.example';
+import { ToolTipExample } from './tooltip/tooltip.example';
 
 const Nav = Regular.extend({
     template: '<MarkdownDoc url="/doc/examples/nav.md"></MarkdownDoc>'
@@ -43,5 +44,8 @@ export const ExampleRoutes = {
     },
     'examples.cascader': {
         view: CascaderExample
+    },
+    'examples.tooltip': {
+        view: ToolTipExample
     }
 };
