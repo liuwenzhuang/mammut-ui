@@ -28,8 +28,10 @@ module.exports = {
                 }, {
                     loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
                     options: {
-                        modules: true,
-                        localIdentName: '[local]--[hash:base64:5]'
+                        modules: {
+                            mode: 'local',
+                            localIdentName: '[local]--[hash:base64:5]'
+                        }
                     }
                 }, {
                     loader: 'sass-loader', // 将 Sass 编译成 CSS

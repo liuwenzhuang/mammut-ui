@@ -16,24 +16,24 @@
   "devDependencies": {
     "@types/lodash": "^4.14.136",
     "awesome-typescript-loader": "^5.2.1",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.2.0",
     "github-markdown-css": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "marked": "^0.7.0",
-    "mini-css-extract-plugin": "^0.6.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^1.0.0",
     "typescript": "^3.5.3",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "@ndsc/form": "0.0.1",
     "lodash": "^4.17.15",
     "regular-state": "^0.6.0-beta.9",
-    "regularjs": "^0.6.2"
+    "regularjs": "^0.6.2",
+    "regularts": "^1.0.1-0"
   }
 }
