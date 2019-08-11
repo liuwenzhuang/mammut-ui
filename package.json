@@ -34,6 +34,6 @@
     "lodash": "^4.17.15",
     "regular-state": "^0.6.0-beta.9",
     "regularjs": "^0.6.2",
-    "regularts": "^1.0.1-0"
+    "regularts": "^1.2.2"
   }
 }

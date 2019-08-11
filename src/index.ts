@@ -3,7 +3,6 @@ import './assets/scss/index.scss';
 // init RegularT
 import RegularJs from 'regularjs';
 import { RegularT } from 'regularts';
-
 RegularT.setRegular(RegularJs);
 
 // cdk component
@@ -16,4 +15,3 @@ export { Input } from './cdk/input/input';
 export { PopupMenu } from './components/popupMenu/popupMenu';
 export { Cascader } from './components/cascader/cascader';
 export { Tooltip, TooltipComponent } from './components/tooltip/tooltip';
-
