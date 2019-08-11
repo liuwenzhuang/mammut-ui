@@ -74,7 +74,7 @@ const TooltipContext = Regular.extend({
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         const top = position.top + (position.height - contextRef.offsetHeight) / 2;
-        const left = position.left + -(contextRef.offsetWidth + 8);
+        const left = position.left + -(contextRef.offsetWidth + 10);
 
         contextRef.style.top = `${top}px`;
         contextRef.style.left = `${left}px`;
@@ -83,7 +83,7 @@ const TooltipContext = Regular.extend({
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         const top = position.top + (position.height - contextRef.offsetHeight) / 2;
-        const left = position.left + position.width + 8;
+        const left = position.left + position.width + 10;
 
         contextRef.style.top = `${top}px`;
         contextRef.style.left = `${left}px`;
@@ -91,7 +91,7 @@ const TooltipContext = Regular.extend({
     computePlacementTop(position: ClientRect) {
         const contextRef: HTMLDivElement = this.$refs['context'];
 
-        const top = position.top - (contextRef.offsetHeight + 8);
+        const top = position.top - (contextRef.offsetHeight + 10);
         const left = position.left + (position.width - contextRef.offsetWidth) / 2;
 
         contextRef.style.top = `${top}px`;
@@ -100,7 +100,7 @@ const TooltipContext = Regular.extend({
     computePlacementBottom(position: ClientRect) {
         const contextRef: HTMLDivElement = this.$refs['context'];
 
-        const top = position.top + position.height + 8;
+        const top = position.top + position.height + 10;
         const left = position.left + (position.width - contextRef.offsetWidth) / 2;
 
         contextRef.style.top = `${top}px`;

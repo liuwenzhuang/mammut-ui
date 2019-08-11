@@ -12,8 +12,18 @@ module.exports = {
         libraryTarget: 'umd'
     },
     externals: {
-        lodash: '_',
-        regularjs: 'Regular'
+        lodash : {
+            commonjs: 'lodash',
+            commonjs2: 'lodash',
+            amd: 'lodash',
+            root: '_' // 指向全局变量
+        },
+        regularjs: {
+            commonjs: 'regularjs',
+            commonjs2: 'regularjs',
+            amd: 'regularjs',
+            root: 'Regular'
+        }
     },
     resolve: {
         extensions: ['.ts', '.js', '.html', '.css']
@@ -67,5 +77,6 @@ module.exports = {
             filename: 'mammut-ui.css'
         })
     ],
-    mode: 'production'
+    mode: 'production',
+    devtool: 'sourcemap'
 };

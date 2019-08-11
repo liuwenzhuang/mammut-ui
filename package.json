@@ -9,6 +9,9 @@
     "build": "rm -rf & webpack --config scripts/webpack.config.build.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "components"
   ],
