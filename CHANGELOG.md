@@ -1,3 +1,12 @@
+# [0.3.0](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.4...v0.3.0) (2019-08-14)
+
+
+### Features
+
+* **tooltip:** 添加自定义类名 ([55db779](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/55db779))
+
+
+
 ## [0.2.4](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.3...v0.2.4) (2019-08-11)
 
 
