@@ -2,6 +2,7 @@ import { RegularT } from 'regularts';
 import Regular from 'regularjs';
 import template from './tooltip.html';
 import styles from './tooltip.scss';
+import { Component } from '../component.interface';
 
 export type Placement = 'left' | 'right' | 'bottom' | 'top' | string;
 export type Trigger = 'hover' | 'click' | string;
@@ -13,11 +14,12 @@ export interface TooltipProps {
     trigger: Trigger;
 }
 
-export interface TooltipStats {
+export interface TooltipStats extends Component {
+    tooltipClassName: string;
 }
 
 const TooltipContext = Regular.extend({
-    template: `<div ref="context" class="hook-tooltip-context {styles.tooltipContext} tooltip-{placement}">{#include title}</div>`,
+    template: `<div ref="context" class="hook-tooltip-context {styles.tooltipContext} tooltip-{placement} {className}">{#include title}</div>`,
     data: {
         styles
     },
@@ -123,17 +125,22 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
     showTooltipTimer = null;
     hideTooltipTimer = null;
 
-    data = {
+    data: TooltipProps & TooltipStats = {
+        tooltipClassName: '',
         title: '',
         placement: 'top',
         visible: false,
         styles: styles,
-        trigger: 'hover'
+        trigger: 'hover',
+        className: ''
     };
 
     config(data?: TooltipProps & TooltipStats) {
         this.tooltipContext = new TooltipContext({
-            data
+            data: {
+                ...data,
+                className: data.tooltipClassName
+            }
         });
         this.tooltipContext.$inject(document.body);
 
@@ -159,7 +166,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
 
     initEvent() {
         const {trigger} = this.data;
-        this.showTooltipHandle = ($event: MouseEvent) => {
+        this.showTooltipHandle = () => {
             this.showTooltip();
         };
         this.hideTooltipHandle = ($event: MouseEvent) => {

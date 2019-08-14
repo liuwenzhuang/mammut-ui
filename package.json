@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config scripts/webpack.config.js",
-    "build": "rm -rf & webpack --config scripts/webpack.config.build.js",
+    "build": "rm -rf && webpack --config scripts/webpack.config.build.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "prepublish": "npm run build"
   },
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.136",
     "awesome-typescript-loader": "^5.2.1",
+    "conventional-changelog": "^3.1.10",
     "css-loader": "^3.2.0",
     "github-markdown-css": "^3.0.1",
     "html-loader": "^0.5.5",
