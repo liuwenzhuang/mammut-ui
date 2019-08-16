@@ -11,19 +11,26 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js', '.html', '.css'],
         alias: {
-            RegularX: path.join(basePath, 'src/regularX.ts'),
+            RegularX: path.join(basePath, 'src/regularX.ts')
         }
     },
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                loader: 'awesome-typescript-loader',
-                options: {
-                    reportFiles: [
-                        'src/**/*.{ts,tsx}'
-                    ]
-                }
+                test: /\.(woff(2)?|ttf|eot|svg)(\?t=.*)?$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                    loader: 'style-loader' // 将 JS 字符串生成为 style 节点
+                }, {
+                    loader: 'css-loader' // 将 CSS 转化成 CommonJS 模
+                }]
             },
             {
                 test: /\.scss$/,
@@ -43,6 +50,15 @@ module.exports = {
                         includePaths: [path.join(basePath, 'src')]
                     }
                 }]
+            },
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    reportFiles: [
+                        'src/**/*.{ts,tsx}'
+                    ]
+                }
             },
             {
                 test: /\.(html)$/,
