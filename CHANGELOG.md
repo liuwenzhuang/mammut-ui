@@ -1,3 +1,14 @@
+# [0.4.0](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.3.0...v0.4.0) (2019-08-16)
+
+
+### Features
+
+* regular 添加语法提示 ([a3b3d4c](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/a3b3d4c))
+* 完成 checkbox 组件及示例 ([4852667](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/4852667))
+* 添加复选组件 ([4b63501](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/commits/4b63501))
+
+
+
 # [0.3.0](http://g.hz.netease.com:22222/mammut-fe/mammut-ui/compare/v0.2.4...v0.3.0) (2019-08-14)
 
 
