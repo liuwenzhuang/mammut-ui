@@ -13,3 +13,5 @@
 - [Tooltip](http://localhost:8444/examples/tooltip)
 
 - [Checkbox](http://localhost:8444/examples/checkbox)
+
+- [Icon](/examples/icon)

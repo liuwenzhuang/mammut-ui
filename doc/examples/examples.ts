@@ -2,7 +2,7 @@ import Regular from 'regularjs';
 
 import template from './examples.html';
 import styles from './examples.scss';
-import './example-previvew/example-preview'
+import './example-previvew/example-preview';
 
 import { CascaderExample } from './cascader/cascader.example';
 import { CheckboxExample } from './checkbox/checkbox.example';
@@ -10,6 +10,7 @@ import { MenuExample } from './menu/menu.example';
 import { OverlayExample } from './overlay/overlay.example';
 import { PopupMenuExample } from './popupMenu/popupMenu.example';
 import { ToolTipExample } from './tooltip/tooltip.example';
+import { IconExampleComponent } from './icon/icon.example';
 
 const Nav = Regular.extend({
     template: '<MarkdownDoc url="/doc/examples/nav.md"></MarkdownDoc>'
@@ -46,5 +47,8 @@ export const ExampleRoutes = {
     },
     'examples.tooltip': {
         view: ToolTipExample
+    },
+    'examples.icon': {
+        view: IconExampleComponent
     }
 };
