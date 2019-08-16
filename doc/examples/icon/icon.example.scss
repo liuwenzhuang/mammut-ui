@@ -1,0 +1,21 @@
+.iconList {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.icon {
+    margin: 16px;
+    padding: 8px;
+    text-align: center;
+    width: 112px;
+    cursor: pointer;
+
+    &:hover {
+        outline: 1px #6B9AC8 solid;
+    }
+}
+
+.details {
+    margin-top: 8px;
+}

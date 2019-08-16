@@ -34,5 +34,31 @@
                 </main>
             </Example.details>
         </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <div class="{styles.iconList}">
+                {#list iconList as icon}
+                    <div class="{styles.icon}" on-click="{this.onClick(icon)}">
+                        <div>
+                            <ui-icon type="{icon}" size="large"></ui-icon>
+                        </div>
+                        <div class="{styles.details}">
+                            {icon}
+                        </div>
+                    </div>
+                {/list}
+                </div>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    全部图标
+                </header>
+                <main>
+                    <p>点击可复制 type</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
     </div>
 </div>
