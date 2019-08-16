@@ -3,42 +3,75 @@
         <MarkdownDoc url="/src/components/tooltip/tooltip.md"></MarkdownDoc>
     </div>
     <div class="doc-main">
-        <ExamplePreview header="基本使用" body="{['通过 hover 触发 tooltip 显示']}">
-            <ui-tooltip title="{tooltip}" placement="right" flag>
-                <span class="{styles.question}">?</span>
-            </ui-tooltip>
+        <ExamplePreview>
+            <Example.Main>
+                <ui-tooltip title="{tooltip}" placement="right" flag>
+                    <span class="{styles.question}">?</span>
+                </ui-tooltip>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    基本使用
+                </header>
+                <main>
+                    <p>通过 hover 触发 tooltip 显示</p>
+                </main>
+            </Example.details>
         </ExamplePreview>
 
-        <ExamplePreview header="根据数据动态显示" body="{['传入 regular 模板, 动态显示数据']}">
-            <ui-tooltip title="{tooltip}" placement="right" flag>
-                <span class="{styles.question}">?</span>
-            </ui-tooltip>
+        <ExamplePreview>
+            <Example.Main>
+                <ui-tooltip title="{tooltip}" placement="right" flag>
+                    <span class="{styles.question}">?</span>
+                </ui-tooltip>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    根据数据动态显示
+                </header>
+                <main>
+                    <p>传入 regular 模板, 动态显示数据</p>
+                </main>
+            </Example.details>
         </ExamplePreview>
 
-        <ExamplePreview header="设置方向" body="{['通过 placement = left|right|top|bottom 设置浮层显示的位置']}">
-            <p style="margin-bottom: 16px">
-                <ui-tooltip title="left" placement="left">
-                    <span>left</span>
-                </ui-tooltip>
-            </p>
+        <ExamplePreview>
+            <Example.Main>
+                <p style="margin-bottom: 16px">
+                    <ui-tooltip title="left" placement="left">
+                        <span>left</span>
+                    </ui-tooltip>
+                </p>
 
-            <p style="margin-bottom: 16px">
-                <ui-tooltip title="right" placement="right">
-                    <span>right</span>
-                </ui-tooltip>
-            </p>
+                <p style="margin-bottom: 16px">
+                    <ui-tooltip title="right" placement="right">
+                        <span>right</span>
+                    </ui-tooltip>
+                </p>
 
-            <p style="margin-bottom: 16px">
-                <ui-tooltip title="top" placement="top">
-                    <span>top</span>
-                </ui-tooltip>
-            </p>
+                <p style="margin-bottom: 16px">
+                    <ui-tooltip title="top" placement="top">
+                        <span>top</span>
+                    </ui-tooltip>
+                </p>
 
-            <p style="margin-bottom: 16px">
-                <ui-tooltip title="bottom" placement="bottom">
-                    <span>bottom</span>
-                </ui-tooltip>
-            </p>
+                <p style="margin-bottom: 16px">
+                    <ui-tooltip title="bottom" placement="bottom">
+                        <span>bottom</span>
+                    </ui-tooltip>
+                </p>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    设置方向
+                </header>
+                <main>
+                    <p>通过 placement = left|right|top|bottom 设置浮层显示的位置</p>
+                </main>
+            </Example.details>
         </ExamplePreview>
     </div>
 </div>
