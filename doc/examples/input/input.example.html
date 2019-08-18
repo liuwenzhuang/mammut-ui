@@ -1,0 +1,78 @@
+<div class="doc-wrap {styles.inputExample}">
+    <div class="doc-sidebar">
+        <MarkdownDoc url="/src/components/input/input.md"></MarkdownDoc>
+        <MarkdownDoc url="/src/cdk/input/input-cdk.md"></MarkdownDoc>
+
+    </div>
+    <div class="doc-main">
+        <ExamplePreview>
+            <Example.Main>
+                <ui-input size="small" placeholder="small"></ui-input>
+
+                <ui-input size="normal" placeholder="normal"></ui-input>
+
+                <ui-input size="large" placeholder="large"></ui-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    基本使用
+                </header>
+                <main>
+                    <p>使用 size 指定输入框大小</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-input size="normal" placeholder="readonly" readonly></ui-input>
+                <ui-input size="normal" placeholder="disabled" disabled></ui-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    元素状态
+                </header>
+                <main>
+                    <p>禁用 readonly 和 只读 disabled 状态</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-input size="normal" defaultValue="defaultValue"></ui-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    设置默认值
+                </header>
+                <main>
+                    <p>通过 defaultValue 设置默认值</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-input
+                        on-blur="{this.handleBlur($event)}"
+                        on-focus="{this.handleFocus($event)}"
+                        on-input="{this.handleInput($event)}"
+                        on-change="{this.handleChange($event)}"
+                ></ui-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    事件响应
+                </header>
+                <main>
+                    <p>支持 input、change、blur、focus 事件，详细信息请开控制台</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+    </div>
+</div>

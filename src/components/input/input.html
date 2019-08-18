@@ -1,0 +1,14 @@
+<div class="ui-input {className} {styles.wrap} {size}" r-class="{{disabled: disabled, inline: inline}}">
+    <ui-cdk-input
+        defaultValue="{defaultValue}"
+        disabled="{disabled}"
+        name="{name}"
+        placeholder="{placeholder}"
+        readonly="{readonly}"
+        type="{type}"
+        on-blur="{this.handleBlur($event)}"
+        on-change="{this.handleChange($event)}"
+        on-focus="{this.handleFocus($event)}"
+        on-input="{this.handleInput($event)}"
+    ></ui-cdk-input>
+</div>

@@ -1,17 +1,19 @@
 # 组件开发工具 (CDK)
 
-- [Overlay](http://localhost:8444/examples/overlay)
+- [Overlay](/examples/overlay)
 
-- [Menu](http://localhost:8444/examples/menu)
+- [Menu](/examples/menu)
 
 # 组件 (Component)
 
-- [PopupMenu](http://localhost:8444/examples/popup-menu)
+- [PopupMenu](/examples/popup-menu)
 
-- [Cascader](http://localhost:8444/examples/cascader)
+- [Cascader](/examples/cascader)
 
-- [Tooltip](http://localhost:8444/examples/tooltip)
+- [Tooltip](/examples/tooltip)
 
-- [Checkbox](http://localhost:8444/examples/checkbox)
+- [Checkbox](/examples/checkbox)
 
 - [Icon](/examples/icon)
+
+- [Input](/examples/input)

@@ -1,0 +1,39 @@
+@import "assets/scss/mixins/input.mixin";
+
+.wrap {
+    position: relative;
+
+    &:global(.small) {
+        @include input-size-small;
+    }
+
+    &:global(.normal) {
+        @include input-size-normal;
+    }
+
+    &:global(.large) {
+        @include input-size-large;
+    }
+
+    &:global(.inline) {
+        display: inline-block;
+    }
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    right: 8px;
+    top: 16px;
+
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: #CCCCCC transparent transparent transparent;
+
+    &:global(.active) {
+        transform: rotate(180deg);
+        top: 14px;
+    }
+}
