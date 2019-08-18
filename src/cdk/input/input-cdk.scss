@@ -1,0 +1,17 @@
+@import "assets/scss/mixins/input.mixin";
+
+.input {
+    @include input-base;
+
+    &:global(.active), &:global(:hover) {
+        @include input-active;
+    }
+
+    &:global(.disabled), &:global([disabled]) {
+        @include input-disabled;
+    }
+
+    &:global(.disable:hover), &:global([disabled]:hover) {
+        border-color: $input-border-color;
+    }
+}

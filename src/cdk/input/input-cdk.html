@@ -1,0 +1,17 @@
+<input
+        autocomplete="off"
+        class="ui-cdk-input {styles.input}"
+        name="{name}"
+        on-blur="{this.handleBlur($event)}"
+        on-change="{this.handleChange($event)}"
+        on-focus="{this.handleFocus($event)}"
+        on-input="{this.handleInput($event)}"
+        placeholder="{placeholder}"
+        r-class="{{'disabled': disabled}}"
+        ref="input"
+        spellcheck="false"
+        type="{type}"
+        value="{defaultValue}"
+        {#if disabled}disabled{/if}
+        {#if readonly}readonly{/if}
+>
