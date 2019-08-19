@@ -1,6 +1,10 @@
-<div class="ui-input {className} {styles.wrap} {size}" r-class="{{disabled: disabled, inline: inline}}">
+<div class="ui-input {className} {styles.wrap} {size}" r-class="{{disabled: disabled, inline: inline, 'with-prefix': prefixTemplate !== '', 'with-suffix': suffixTemplate !== ''}}">
+    {#if prefixTemplate}
+    {#include prefixTemplate}
+    {/if}
     <ui-cdk-input
         defaultValue="{defaultValue}"
+        value="{value}"
         disabled="{disabled}"
         name="{name}"
         placeholder="{placeholder}"
@@ -11,4 +15,7 @@
         on-focus="{this.handleFocus($event)}"
         on-input="{this.handleInput($event)}"
     ></ui-cdk-input>
+    {#if suffixTemplate}
+    {#include suffixTemplate}
+    {/if}
 </div>

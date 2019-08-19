@@ -1,8 +1,8 @@
-import './fonts/iconfont.css';
 import { RegularT } from 'regularts';
+import './fonts/iconfont.css';
 import template from './icon.html';
-import styles from './icon.scss';
 import { IconProps, IconSize, IconState } from './icon.interface';
+import styles from './icon.scss';
 
 export class Icon extends RegularT<IconProps, IconState> {
     name = 'ui-icon';
@@ -10,9 +10,9 @@ export class Icon extends RegularT<IconProps, IconState> {
     data: IconProps & IconState = {
         className: '',
         size: IconSize.normal,
-        type: '',
+        style: {},
         styles,
-        style: {}
+        type: '',
     };
 }
 

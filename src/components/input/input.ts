@@ -8,18 +8,29 @@ export class Input extends RegularT<InputProps, InputState> {
     name = 'ui-input';
     template = template;
     data: InputProps & InputState = {
+        addonAfter: '',
+        addonBefore: '',
         className: '',
         defaultValue: '',
         disabled: false,
         inline: false,
         name: '',
         placeholder: '',
+        prefix: '',
+        prefixTemplate: '',
         readonly: false,
         size: InputSize.normal,
         styles,
+        suffix: '',
+        suffixTemplate: '',
         type: 'text',
         value: '',
     };
+
+    config(data?: InputProps & InputState) {
+        data.prefixTemplate = this.generateIconTemplate(data.prefix);
+        data.suffixTemplate = this.generateIconTemplate(data.suffix);
+    }
 
     handleFocus({$event, value}) {
         this.$emit('focus', {
@@ -47,6 +58,20 @@ export class Input extends RegularT<InputProps, InputState> {
             $event,
             value,
         });
+    }
+
+    private generateIconTemplate(type: string) {
+        type = type.trim();
+
+        if (type) {
+            if (type.trim().startsWith('<')) {
+                return type;
+            } else {
+                return `<ui-icon type="${type}" />`;
+            }
+        } else {
+            return '';
+        }
     }
 }
 

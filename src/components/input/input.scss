@@ -18,6 +18,32 @@
     &:global(.inline) {
         display: inline-block;
     }
+
+    &:global(.with-prefix) {
+        input {
+            padding-left: 32px;
+        }
+
+        & > :global(.ui-icon):first-child {
+            cursor: text;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+    }
+
+    &:global(.with-suffix) {
+        input {
+            padding-right: 32px;
+        }
+
+        & > :global(.ui-icon):last-child {
+            cursor: text;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+    }
 }
 
 .triangle {
