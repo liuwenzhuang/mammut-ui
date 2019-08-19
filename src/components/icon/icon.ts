@@ -11,7 +11,8 @@ export class Icon extends RegularT<IconProps, IconState> {
         className: '',
         size: IconSize.normal,
         type: '',
-        styles
+        styles,
+        style: {}
     };
 }
 

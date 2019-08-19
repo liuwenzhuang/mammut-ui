@@ -132,7 +132,8 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
         visible: false,
         styles: styles,
         trigger: 'hover',
-        className: ''
+        className: '',
+        style: {}
     };
 
     config(data?: TooltipProps & TooltipStats) {
