@@ -12,7 +12,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 实现状态 |
 | --- | --- | --- | --- | --- |
-| defaultValue | 默认值，**由于双向绑定的关系会被修改** | string | "" | 是 |
+| defaultValue | 默认值 | string | "" | 是 |
+| value | 输入框的值 | string | "" | 是 |
 | disabled | 是否禁用 | boolean | false | 是 |
 | readonly | 是否只读 | boolean | false | 是 |
 | placeholder | 提示用户输入框的作用 | string | "" | 是 |
