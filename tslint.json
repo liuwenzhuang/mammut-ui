@@ -8,7 +8,8 @@
         "quotemark": false,
         "interface-name": false,
         "member-access": false,
-        "no-console": [true, "log", "error"]
+        "no-console": [true, "log", "error"],
+        "no-empty-interface": false
     },
     "rulesDirectory": []
 }

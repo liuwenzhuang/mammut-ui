@@ -1,15 +1,13 @@
 import { RegularT } from 'regularts';
-import { InputSize } from './input.enums';
+import { InputSize } from '../input.enums';
 import template from './input.html';
-import { InputProps, InputState } from './input.interface';
+import { InputProps, InputState } from '../input.interface';
 import styles from './input.scss';
 
 export class Input extends RegularT<InputProps, InputState> {
     name = 'ui-input';
     template = template;
     data: InputProps & InputState = {
-        addonAfter: '',
-        addonBefore: '',
         className: '',
         defaultValue: '',
         disabled: false,

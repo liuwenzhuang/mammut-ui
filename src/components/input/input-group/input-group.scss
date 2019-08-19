@@ -1,0 +1,31 @@
+@import "assets/scss/mixins/input.mixin";
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+
+    :global(.ui-input) {
+        margin: 0;
+        flex-shrink: 1;
+
+        input {
+            border-radius: 0;
+        }
+    }
+
+    &:global(.small) {
+        @include input-size-small;
+    }
+
+    &:global(.normal) {
+        @include input-size-normal;
+    }
+
+    &:global(.large) {
+        @include input-size-large;
+    }
+
+    &:global(.inline) {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,20 @@
+@import "assets/scss/mixins/input.mixin";
+
+.inputAddon {
+    height: $input-height;
+    padding: 6px 10px;
+
+    border: 1px solid $input-border-color;
+
+    &:global(.input-addon-before) {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-right: none;
+    }
+
+    &:global(.input-addon-after) {
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-left: none;
+    }
+}

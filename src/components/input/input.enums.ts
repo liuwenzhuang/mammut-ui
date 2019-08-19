@@ -3,3 +3,8 @@ export enum InputSize {
     normal = 'normal',
     small = 'small',
 }
+
+export enum InputAddonPlacement {
+    before = 'before',
+    after = 'after',
+}
