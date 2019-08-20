@@ -15,15 +15,11 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
         readonly: false,
         styles,
         type: 'text',
-        value: ''
+        value: '',
     };
 
     config(data?: InputCdkProps & InputCdkState): void {
         data.value = data.value || data.defaultValue || '';
-        console.log(data);
-        this.$watch('value', (v) => {
-            console.log(v);
-        });
     }
 
     handleFocus($event: MouseEvent) {
@@ -31,7 +27,7 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
 
         this.$emit('focus', {
             $event,
-            value
+            value,
         });
     }
 
@@ -40,7 +36,7 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
 
         this.$emit('blur', {
             $event,
-            value
+            value,
         });
     }
 
@@ -49,7 +45,7 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
 
         this.$emit('input', {
             $event,
-            value
+            value,
         });
     }
 
@@ -58,7 +54,7 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
 
         this.$emit('change', {
             $event,
-            value
+            value,
         });
     }
 }
