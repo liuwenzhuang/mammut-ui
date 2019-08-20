@@ -3,12 +3,9 @@
     "target": "es5",
     "module": "commonjs",
     "esModuleInterop": true,
-    "baseUrl": "src",
-    "paths": {
-      "RegularX": [
-        "regularX.ts"
-      ]
-    }
+    "lib": [
+      "dom"
+    ]
   },
   "exclude": [
     "node_modules"
