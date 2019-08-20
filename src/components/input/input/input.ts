@@ -58,6 +58,12 @@ export class Input extends RegularT<InputProps, InputState> {
         });
     }
 
+    handleClear() {
+        this.$update({
+            value: '',
+        });
+    }
+
     private generateIconTemplate(type: string) {
         type = type.trim();
 

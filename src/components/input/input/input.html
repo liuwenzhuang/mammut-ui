@@ -18,4 +18,9 @@
     {#if suffixTemplate}
     {#include suffixTemplate}
     {/if}
+    {#if value && allowClear}
+    <div class="{styles.closeIcon}">
+        <ui-icon type="close-circle" style="{{color: '#ccc'}}" on-click="{this.handleClear()}"></ui-icon>
+    </div>
+    {/if}
 </div>
