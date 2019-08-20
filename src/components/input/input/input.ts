@@ -44,11 +44,10 @@ export class Input extends RegularT<InputProps, InputState> {
         });
     }
 
-    handleInput({$event, value}) {
-        this.$emit('input', {
-            $event,
-            value,
-        });
+    handleKeyup(event: KeyboardEvent) {
+        if (event.key === 'Enter') {
+            this.$emit('pressEnter', event, this.data.value);
+        }
     }
 
     handleChange({$event, value}) {

@@ -8,8 +8,10 @@ import _ from 'lodash';
 export function transformStyles(styles) {
     styles = Object.assign({}, styles);
 
-    ['top', 'left', 'right', 'bottom'].forEach(key => {
-        if (_.isString(styles[key])) return;
+    ['top', 'left', 'right', 'bottom'].forEach((key) => {
+        if (_.isString(styles[key])) {
+            return;
+        }
 
         if (isNaN(styles[key])) {
             delete styles[key];
