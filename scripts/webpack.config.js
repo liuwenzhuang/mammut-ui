@@ -72,7 +72,8 @@ module.exports = {
         port: 8444,
         historyApiFallback: {
             index: 'doc/index.html'
-        }
+        },
+        open: true
     },
     devtool: 'source-map',
     mode: 'development'
