@@ -14,6 +14,10 @@ export class Icon extends RegularT<IconProps, IconState> {
         styles,
         type: '',
     };
+
+    handleClick($event) {
+        this.$emit('click', $event);
+    }
 }
 
 export const IconComponent = RegularT.extend(Icon);
