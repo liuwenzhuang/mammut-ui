@@ -40,13 +40,14 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
         });
     }
 
-    handleInput($event: UIEvent) {
-        const value = ($event.target as HTMLInputElement).value;
+    handleKeydown($event) {
+        const {event}: { event: KeyboardEvent } = $event;
+        this.$emit('keydown', event);
+    }
 
-        this.$emit('input', {
-            $event,
-            value,
-        });
+    handleKeyup($event) {
+        const {event}: { event: KeyboardEvent } = $event;
+        this.$emit('keyup', event);
     }
 
     handleChange($event: UIEvent) {
