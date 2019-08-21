@@ -1,7 +1,7 @@
 import { RegularT } from 'regularts';
 import { InputSize } from '../input.enums';
-import template from './input.html';
 import { InputProps, InputState } from '../input.interface';
+import template from './input.html';
 import styles from './input.scss';
 
 export class Input extends RegularT<InputProps, InputState> {
@@ -11,6 +11,7 @@ export class Input extends RegularT<InputProps, InputState> {
         className: '',
         defaultValue: '',
         disabled: false,
+        id: '',
         inline: false,
         name: '',
         placeholder: '',
@@ -18,6 +19,7 @@ export class Input extends RegularT<InputProps, InputState> {
         prefixTemplate: '',
         readonly: false,
         size: InputSize.normal,
+        style: {},
         styles,
         suffix: '',
         suffixTemplate: '',

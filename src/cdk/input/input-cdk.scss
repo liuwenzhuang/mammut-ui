@@ -10,8 +10,4 @@
     &:global(.disabled), &:global([disabled]) {
         @include input-disabled;
     }
-
-    &:global(.disable:hover), &:global([disabled]:hover) {
-        border-color: $input-border-color;
-    }
 }

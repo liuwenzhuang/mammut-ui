@@ -12,6 +12,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 实现状态 |
 | --- | --- | --- | --- | --- |
+| name | input name | string | "" | 是 |
+| id | input id | string | "" | 是 |
 | defaultValue | 默认值 | string | "" | 是 |
 | value | 输入框的值 | string | "" | 是 |
 | disabled | 是否禁用 | boolean | false | 是 |

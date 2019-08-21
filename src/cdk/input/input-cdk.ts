@@ -11,6 +11,7 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
         className: '',
         defaultValue: '',
         disabled: false,
+        id: '',
         name: '',
         placeholder: '',
         readonly: false,

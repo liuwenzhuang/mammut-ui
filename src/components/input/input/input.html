@@ -1,4 +1,4 @@
-<div class="ui-input {className} {styles.wrap} {size}" r-class="{{disabled: disabled, inline: inline, 'with-prefix': prefixTemplate !== '', 'with-suffix': suffixTemplate !== ''}}">
+<div class="ui-input {className} {styles.wrap} {size}" r-style="{style}" r-class="{{disabled: disabled, inline: inline, 'with-prefix': prefixTemplate !== '', 'with-suffix': suffixTemplate !== ''}}">
     {#if prefixTemplate}
     {#include prefixTemplate}
     {/if}
@@ -7,6 +7,7 @@
         value="{value}"
         disabled="{disabled}"
         name="{name}"
+        id="{id}"
         placeholder="{placeholder}"
         readonly="{readonly}"
         type="{type}"

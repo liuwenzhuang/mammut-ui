@@ -5,6 +5,7 @@ export interface InputCdkProps {
     disabled: boolean;
     readonly: boolean;
     name: string;
+    id: string;
     type: string;
     placeholder: string;
     value: string;
