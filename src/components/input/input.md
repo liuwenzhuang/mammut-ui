@@ -18,6 +18,7 @@
 | prefix | 前置输入框图标 | IconType | | 是 |
 | suffix | 后置输入框图标 | IconType | | 是 |
 | allowClear | 是否显示清除标签 | boolean | false | 是 |
+| pressEnter | 按下回车时的回调 | (value: string, event: KeyboardEvent) => void | | 是 |
 
 
 ### ui-input-group
