@@ -58,3 +58,17 @@
 | 参数 | 说明 | 类型 | 默认值 | 实现状态 |
 | --- | --- | --- | --- | --- |
 | placement | 标签添加的位置 | before|after | before | 是 |
+
+
+### ui-input-textarea 
+
+> textarea 组件， 除 size 外，实现了 ui-input 的所有 API
+
+```html
+<ui-input-textarea defaultValue="textarea"></ui-input-textarea>
+```
+
+| 参数 | 说明 | 类型 | 默认值 | 实现状态 |
+| --- | --- | --- | --- | --- |
+| showCounter | 是否显示计数器（使用 String.length 属性计算） | boolean | false | 是 |
+| max | 最大 | number | Infinity | 是 |

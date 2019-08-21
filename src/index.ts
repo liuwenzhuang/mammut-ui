@@ -18,5 +18,12 @@ export { Checkbox, CheckboxComponent } from './components/checkbox';
 export { Tooltip, TooltipComponent } from './components/tooltip/tooltip';
 export { Icon, IconSize, IconComponent } from './components/icon';
 export {
-    Input, InputComponent, InputAddon, InputAddonComponent, InputGroup, InputGroupComponent,
+    Input,
+    InputComponent,
+    InputAddon,
+    InputAddonComponent,
+    InputGroup,
+    InputGroupComponent,
+    Textarea,
+    TextareaComponent,
 }from './components/input';

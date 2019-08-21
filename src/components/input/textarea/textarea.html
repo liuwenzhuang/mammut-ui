@@ -1,0 +1,11 @@
+<div class="ui-textarea {className} {styles.textarea}" r-style="{style}"  r-class="{{disabled: disabled}}">
+    <textarea
+            name="{name}"
+            id="{id}"
+            {#if disabled}disabled{/if}
+            {#if readonly}readonly{/if}
+    ></textarea>
+    {#if showCounter}
+    <div class="{styles.counter}">{counter}/{max}</div>
+    {/if}
+</div>

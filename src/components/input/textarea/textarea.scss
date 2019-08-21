@@ -1,0 +1,50 @@
+@import "assets/scss/mixins/input.mixin";
+
+.textarea {
+    textarea {
+        padding: 10px 12px;
+        width: 376px;
+        min-height: 88px;
+
+        overflow: auto;
+        resize: none;
+
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+
+        color: #333333;
+        line-height: 1.2;
+
+        &:hover {
+            @include input-active;
+        }
+
+        &[disabled], &[disabled]:hover{
+            @include input-disabled;
+        }
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 12px;
+            background-color: #dcdcdc;
+            border: 4px solid transparent;
+            background-clip: content-box;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background: inherit;
+        }
+    }
+}
+
+
