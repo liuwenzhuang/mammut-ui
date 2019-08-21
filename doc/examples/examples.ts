@@ -7,6 +7,7 @@ import './example-previvew/example-preview';
 import template from './examples.html';
 import styles from './examples.scss';
 import { IconExampleComponent } from './icon/icon.example';
+import { InputCdkExampleComponent } from './input-cdk/input-cdk.example';
 import { InputExampleComponent } from './input/input.example';
 import { MenuExample } from './menu/menu.example';
 import { OverlayExample } from './overlay/overlay.example';
@@ -39,6 +40,9 @@ export const ExampleRoutes = {
     },
     'examples.input': {
         view: InputExampleComponent,
+    },
+    'examples.input-cdk': {
+        view: InputCdkExampleComponent,
     },
     'examples.main-nav': {
         view: Nav,

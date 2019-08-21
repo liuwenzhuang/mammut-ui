@@ -4,6 +4,8 @@
 
 - [Menu](/examples/menu)
 
+- [Input](/examples/input-cdk)
+
 # 组件 (Component)
 
 - [PopupMenu](/examples/popup-menu)

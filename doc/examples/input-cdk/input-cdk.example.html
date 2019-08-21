@@ -1,0 +1,58 @@
+<div class="doc-wrap {styles.inputExample}">
+    <div class="doc-sidebar">
+        <MarkdownDoc url="/src/cdk/input/input-cdk.md"></MarkdownDoc>
+    </div>
+    <div class="doc-main">
+        <ExamplePreview>
+            <Example.Main>
+                <ui-cdk-input size="normal" placeholder="readonly" style="{{marginBottom: '8px'}}" readonly></ui-cdk-input>
+                <ui-cdk-input size="normal" placeholder="disabled" disabled></ui-cdk-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    元素状态
+                </header>
+                <main>
+                    <p>禁用 readonly 和 只读 disabled 状态</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-cdk-input size="normal" defaultValue="defaultValue"></ui-cdk-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    设置默认值
+                </header>
+                <main>
+                    <p>通过 defaultValue 设置默认值</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-cdk-input
+                        on-blur="{this.handleBlur($event)}"
+                        on-focus="{this.handleFocus($event)}"
+                        on-keydown="{this.handleKeydown($event)}"
+                        on-keyup="{this.handleKeyup($event)}"
+                        on-input="{this.handleInput($event)}"
+                ></ui-cdk-input>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    事件响应
+                </header>
+                <main>
+                    <p>支持 keydown、keyup、input、blur、focus 事件，详细信息请开控制台</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+    </div>
+</div>
