@@ -1,4 +1,4 @@
-import { RegularT } from 'regularts';
+import { RegularEvent, RegularT } from 'regularts';
 import template from './input-cdk.html';
 
 import { InputCdkProps, InputCdkState } from './input-cdk.interface';
@@ -8,11 +8,13 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
     name = 'ui-cdk-input';
     template = template;
     data: InputCdkProps & InputCdkState = {
+        className: '',
         defaultValue: '',
         disabled: false,
         name: '',
         placeholder: '',
         readonly: false,
+        style: {},
         styles,
         type: 'text',
         value: '',
@@ -22,41 +24,28 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
         data.value = data.value || data.defaultValue || '';
     }
 
-    handleFocus($event: MouseEvent) {
+    handleFocus({event}: RegularEvent<FocusEvent>) {
         const {value} = this.data;
 
-        this.$emit('focus', {
-            $event,
-            value,
-        });
+        this.$emit('focus', {value, event});
     }
 
-    handleBlur($event: MouseEvent) {
+    handleBlur({event}: RegularEvent<FocusEvent>) {
         const {value} = this.data;
 
-        this.$emit('blur', {
-            $event,
-            value,
-        });
+        this.$emit('blur', {value, event});
     }
 
-    handleKeydown($event) {
-        const {event}: { event: KeyboardEvent } = $event;
-        this.$emit('keydown', event);
+    handleKeydown({event}: RegularEvent<KeyboardEvent>) {
+        this.$emit('keydown', {event, value: (event.target as HTMLInputElement).value});
     }
 
-    handleKeyup($event) {
-        const {event}: { event: KeyboardEvent } = $event;
-        this.$emit('keyup', event);
+    handleKeyup({event}: RegularEvent<KeyboardEvent>) {
+        this.$emit('keyup', {event, value: (event.target as HTMLInputElement).value});
     }
 
-    handleChange($event: UIEvent) {
-        const value = ($event.target as HTMLInputElement).value;
-
-        this.$emit('change', {
-            $event,
-            value,
-        });
+    handleInput({event}: RegularEvent<InputEvent>) {
+        this.$emit('input', {event, value: (event.target as HTMLInputElement).value});
     }
 }
 
