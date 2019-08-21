@@ -11,9 +11,10 @@
         readonly="{readonly}"
         type="{type}"
         on-blur="{this.handleBlur($event)}"
-        on-change="{this.handleChange($event)}"
         on-focus="{this.handleFocus($event)}"
         on-keyup="{this.handleKeyup($event)}"
+        on-keydown="{this.handleKeydown($event)}"
+        on-input="{this.handleInput($event)}"
     ></ui-cdk-input>
     {#if suffixTemplate}
     {#include suffixTemplate}

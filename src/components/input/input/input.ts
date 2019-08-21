@@ -30,31 +30,29 @@ export class Input extends RegularT<InputProps, InputState> {
         data.suffixTemplate = this.generateIconTemplate(data.suffix);
     }
 
-    handleFocus({$event, value}) {
-        this.$emit('focus', {
-            $event,
-            value,
-        });
+    handleFocus($event) {
+        this.$emit('focus', $event);
+
     }
 
-    handleBlur({$event, value}) {
-        this.$emit('blur', {
-            $event,
-            value,
-        });
+    handleBlur($event) {
+        this.$emit('blur', $event);
     }
 
-    handleKeyup(event: KeyboardEvent) {
+    handleKeyup(event: KeyboardEvent, value: string) {
         if (event.key === 'Enter') {
-            this.$emit('pressEnter', event, this.data.value);
+            this.$emit('pressEnter', {event, value});
         }
+
+        this.$emit('keyup', event, value);
     }
 
-    handleChange({$event, value}) {
-        this.$emit('change', {
-            $event,
-            value,
-        });
+    handleKeydown($event) {
+        this.$emit('keydown', $event);
+    }
+
+    handleInput($event) {
+        this.$emit('input', $event);
     }
 
     handleClear() {
