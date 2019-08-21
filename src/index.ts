@@ -14,7 +14,7 @@ export { InputCdk, InputCdkComponent, InputCdkState, InputCdkProps } from './cdk
 // components
 export { PopupMenu } from './components/popupMenu/popupMenu';
 export { Cascader } from './components/cascader/cascader';
-export { Checkbox } from './components/checkbox/checkbox';
+export { Checkbox, CheckboxComponent } from './components/checkbox';
 export { Tooltip, TooltipComponent } from './components/tooltip/tooltip';
 export { Icon, IconSize, IconComponent } from './components/icon';
 export {
