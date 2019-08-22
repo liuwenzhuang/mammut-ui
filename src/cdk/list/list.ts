@@ -8,15 +8,18 @@ export const List = Regular.extend({
     template,
     name: 'ui-cdk-list',
     config(props) {
-        this.data = _.merge({
-            styles,
-            options: []
-        }, props);
+        this.data = _.merge(
+            {
+                styles,
+                options: [],
+            },
+            props
+        );
     },
     handleMousedown(event) {
         this.$emit('mousedown', event);
     },
     handleClick(...args) {
         this.$emit('click', args);
-    }
+    },
 });

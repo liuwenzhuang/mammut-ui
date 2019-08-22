@@ -3,7 +3,7 @@ import { Component } from '../component.interface';
 export enum IconSize {
     large = 'large',
     normal = 'normal',
-    small = 'small'
+    small = 'small',
 }
 
 export interface IconProps {

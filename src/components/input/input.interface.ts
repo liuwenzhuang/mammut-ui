@@ -18,18 +18,14 @@ export interface InputAddonProps {
     placement: InputAddonPlacement;
 }
 
-export interface InputAddonState extends Component {
-
-}
+export interface InputAddonState extends Component {}
 
 export interface InputGroupProps {
     compact: boolean;
     size: InputSize;
 }
 
-export interface InputGroupState extends Component {
-
-}
+export interface InputGroupState extends Component {}
 
 export interface InputTextareaProps extends InputCdkProps {
     showCounter: boolean;

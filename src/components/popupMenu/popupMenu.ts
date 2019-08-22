@@ -2,7 +2,7 @@ import Regular from 'regularjs';
 import _ from 'lodash';
 
 import template from './popupMenu.html';
-import {transformStyles} from '../../utils';
+import { transformStyles } from '../../utils';
 
 const dom = Regular.dom;
 
@@ -10,9 +10,12 @@ export const PopupMenu = Regular.extend({
     template,
     name: 'ui-popup-menu',
     config(props) {
-        this.data = Object.assign({
-            scrollHide: false
-        }, props);
+        this.data = Object.assign(
+            {
+                scrollHide: false,
+            },
+            props
+        );
     },
     init(data) {
         const menuElement = dom.element(this.$refs.menu);
@@ -40,7 +43,7 @@ export const PopupMenu = Regular.extend({
         }
 
         this.$emit('click', $event);
-    }
+    },
 });
 
 /**
@@ -57,12 +60,15 @@ PopupMenu.show = (position, menu, options) => {
     position = transformStyles(position);
 
     return new Promise(resolve => {
-        const instance = (new PopupMenu({
-            data: Object.assign({
-                menu,
-                position
-            }, options)
-        })).$inject(document.body);
+        const instance = new PopupMenu({
+            data: Object.assign(
+                {
+                    menu,
+                    position,
+                },
+                options
+            ),
+        }).$inject(document.body);
 
         instance.$on('hide', () => {
             instance.destroy();
@@ -70,8 +76,7 @@ PopupMenu.show = (position, menu, options) => {
             resolve(null);
         });
 
-
-        instance.$on('click', ($event) => {
+        instance.$on('click', $event => {
             instance.destroy();
 
             resolve($event);

@@ -9,7 +9,12 @@ RegularT.setRegular(Regular);
 export { Overlay } from './cdk/overlay/overlay';
 export { Menu } from './cdk/menu/menu';
 export { List } from './cdk/list/list';
-export { InputCdk, InputCdkComponent, InputCdkState, InputCdkProps } from './cdk/input';
+export {
+    InputCdk,
+    InputCdkComponent,
+    InputCdkState,
+    InputCdkProps,
+} from './cdk/input';
 
 // components
 export { PopupMenu } from './components/popupMenu/popupMenu';

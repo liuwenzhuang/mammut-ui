@@ -11,9 +11,7 @@ export interface InputCdkProps {
     value: string;
 }
 
-export interface InputCdkState extends Component {
-
-}
+export interface InputCdkState extends Component {}
 
 interface InputCdkEvent<T> {
     value: string;

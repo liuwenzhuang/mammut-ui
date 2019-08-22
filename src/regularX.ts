@@ -6,17 +6,11 @@ export class RegularX<Data> {
     $refs: any;
     data: Data;
 
-    config(data?: Data) {
+    config(data?: Data) {}
 
-    }
+    init(data?: Data) {}
 
-    init(data?: Data) {
-
-    }
-
-    super() {
-
-    }
+    super() {}
 
     destroy() {
         this.super();
@@ -26,34 +20,19 @@ export class RegularX<Data> {
         return 1;
     }
 
-    $unwatch(watchId: WatchId) {
+    $unwatch(watchId: WatchId) {}
 
-    }
+    $inject() {}
 
-    $inject() {
+    $update(target: string | Partial<Data>, value?: any) {}
 
-    }
+    $on(name: string, handle?: Function) {}
 
-    $update(target: string | Partial<Data>, value?: any) {
+    $off(name: string, handle?: Function) {}
 
-    }
+    $emit(name: string, params?: any) {}
 
-    $on(name: string, handle?: Function) {
-
-    }
-
-    $off(name: string, handle?: Function) {
-
-    }
-
-
-    $emit(name: string, params?: any) {
-
-    }
-
-    $mute(isMute: boolean) {
-
-    }
+    $mute(isMute: boolean) {}
 
     static extend(component: any) {
         const componentInstance = new component();
@@ -75,4 +54,3 @@ export class RegularX<Data> {
         return RegularJs.extend(regularObject);
     }
 }
-

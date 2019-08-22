@@ -10,27 +10,33 @@ export const Menu = Regular.extend({
     template,
     name: 'ui-cdk-menu',
     config(props) {
-        this.data = Object.assign({
-            styles
-        }, props);
+        this.data = Object.assign(
+            {
+                styles,
+            },
+            props
+        );
     },
     init() {
-        this.$watch('selected', function (selected) {
+        this.$watch('selected', function(selected) {
             if (!selected) return;
 
-            const menu = this.data.menu.map(function (menuItem) {
+            const menu = this.data.menu.map(function(menuItem) {
                 const tmp = {
                     selected: selected.indexOf(menuItem.key) !== -1,
-                    children: []
+                    children: [],
                 };
 
                 if (menuItem.children) {
-                    tmp.children = menuItem.children.map(function (childMenuItem) {
-                        const _selected = selected.indexOf(childMenuItem.key) !== -1;
+                    tmp.children = menuItem.children.map(function(
+                        childMenuItem
+                    ) {
+                        const _selected =
+                            selected.indexOf(childMenuItem.key) !== -1;
                         tmp.selected = tmp.selected || _selected;
 
                         return _.merge(childMenuItem, {
-                            selected: _selected
+                            selected: _selected,
                         });
                     });
                 }
@@ -39,16 +45,18 @@ export const Menu = Regular.extend({
             });
 
             this.$update({
-                menu: menu
+                menu: menu,
             });
         });
     },
     computed: {
-        hasDesc: function (data) {
-            return data.menu.filter(function (item) {
-                return item.desc;
-            }).length !== 0;
-        }
+        hasDesc: function(data) {
+            return (
+                data.menu.filter(function(item) {
+                    return item.desc;
+                }).length !== 0
+            );
+        },
     },
     /**
      * 验证边界, 用于子菜单弹出位置确定
@@ -73,5 +81,5 @@ export const Menu = Regular.extend({
         if (!menuItem.disabled) {
             this.$emit('click', menuItem);
         }
-    }
+    },
 });

@@ -12,14 +12,13 @@
 
 > 继承 [ui-cdk-input API](#inputcdk-输入组件)
 
-| 参数 | 说明 | 类型 | 默认值 | 实现状态 |
-| --- | --- | --- | --- | --- |
-| size | 输入框大小，对应三种不同的长度 | small&verbar;normal&verbar;large | normal | 是 |
-| prefix | 前置输入框图标 | IconType | | 是 |
-| suffix | 后置输入框图标 | IconType | | 是 |
-| allowClear | 是否显示清除标签 | boolean | false | 是 |
-| pressEnter | 按下回车时的回调 | (value: string, event: KeyboardEvent) => void | | 是 |
-
+| 参数       | 说明                           | 类型                                          | 默认值 | 实现状态 |
+| ---------- | ------------------------------ | --------------------------------------------- | ------ | -------- |
+| size       | 输入框大小，对应三种不同的长度 | small&verbar;normal&verbar;large              | normal | 是       |
+| prefix     | 前置输入框图标                 | IconType                                      |        | 是       |
+| suffix     | 后置输入框图标                 | IconType                                      |        | 是       |
+| allowClear | 是否显示清除标签               | boolean                                       | false  | 是       |
+| pressEnter | 按下回车时的回调               | (value: string, event: KeyboardEvent) => void |        | 是       |
 
 ### ui-input-group
 
@@ -32,10 +31,9 @@
 </ui-input-group>
 ```
 
-| 参数 | 说明 | 类型 | 默认值 | 实现状态 |
-| --- | --- | --- | --- | --- |
-| compact | 是否用紧凑模式 | boolean | true | 否 |
-
+| 参数    | 说明           | 类型    | 默认值 | 实现状态 |
+| ------- | -------------- | ------- | ------ | -------- |
+| compact | 是否用紧凑模式 | boolean | true   | 否       |
 
 ### ui-input-addon
 
@@ -55,9 +53,9 @@
 </ui-input-group>
 ```
 
-| 参数 | 说明 | 类型 | 默认值 | 实现状态 |
-| --- | --- | --- | --- | --- |
-| placement | 标签添加的位置 | before|after | before | 是 |
+| 参数      | 说明           | 类型   | 默认值 | 实现状态 |
+| --------- | -------------- | ------ | ------ | -------- |
+| placement | 标签添加的位置 | before | after  | before   | 是 |
 
 
 ### ui-input-textarea 

@@ -1,4 +1,4 @@
-$input-border-color: #CCCCCC;
+$input-border-color: #cccccc;
 
 $input-height: 32px;
 
@@ -16,7 +16,7 @@ $input-height: 32px;
 }
 
 @mixin input-active {
-    border: 1px solid #6B9AC8;
+    border: 1px solid #6b9ac8;
 }
 
 @mixin input-disabled {
@@ -26,7 +26,7 @@ $input-height: 32px;
 }
 
 @mixin input-error {
-    border: 1px solid #E65C5C;
+    border: 1px solid #e65c5c;
 }
 
 @mixin input-size-small {

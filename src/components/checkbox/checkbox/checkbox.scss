@@ -5,21 +5,22 @@
     display: inline-flex;
     user-select: none;
 
-    &, * {
+    &,
+    * {
         cursor: pointer;
     }
 
     &:hover {
         .square {
-            background-color: #D0E8FE;
-            border-color: #0987E5;
+            background-color: #d0e8fe;
+            border-color: #0987e5;
         }
     }
 
     &:global(.checked) {
         .square {
-            background-color: #0987E5;
-            border-color: #0987E5;
+            background-color: #0987e5;
+            border-color: #0987e5;
         }
 
         .tick {
@@ -28,20 +29,21 @@
     }
 
     &:global(.disabled) {
-        &, * {
+        &,
+        * {
             cursor: not-allowed;
         }
 
         .square {
-            background-color: #DDDDDD;
-            border-color: #CECECE;
+            background-color: #dddddd;
+            border-color: #cecece;
         }
     }
 
     &:global(.checked.disabled) {
         .square {
-            background-color: #FFFFFF;
-            border-color: #CECECE;
+            background-color: #ffffff;
+            border-color: #cecece;
         }
 
         .tick {
@@ -58,7 +60,7 @@
     margin-right: 8px;
     position: relative;
 
-    border: 1px solid #CECECE;
+    border: 1px solid #cecece;
     border-radius: 2px;
 }
 

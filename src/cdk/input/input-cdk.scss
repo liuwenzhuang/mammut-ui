@@ -1,13 +1,15 @@
-@import "assets/scss/mixins/input.mixin";
+@import 'assets/scss/mixins/input.mixin';
 
 .input {
     @include input-base;
 
-    &:global(.active), &:global(:hover) {
+    &:global(.active),
+    &:global(:hover) {
         @include input-active;
     }
 
-    &:global(.disabled), &:global([disabled]) {
+    &:global(.disabled),
+    &:global([disabled]) {
         @include input-disabled;
     }
 }

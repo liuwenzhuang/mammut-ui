@@ -1,14 +1,16 @@
-@import "assets/scss/mixins/list.mixin";
+@import 'assets/scss/mixins/list.mixin';
 
 .menu {
     position: absolute;
 
-    &, li {
+    &,
+    li {
         box-sizing: content-box;
         list-style: none;
     }
 
-    &, :local(.children) {
+    &,
+    :local(.children) {
         @include list-wrap;
     }
 }

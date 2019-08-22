@@ -1,7 +1,6 @@
-@import "assets/scss/mixins/list.mixin";
+@import 'assets/scss/mixins/list.mixin';
 
 .cascader {
-
 }
 
 .menu {
@@ -21,7 +20,6 @@
         border-left-color: #999999;
     }
 }
-
 
 :global(.ui-cdk-list + .ui-cdk-list) {
     border-left: none;

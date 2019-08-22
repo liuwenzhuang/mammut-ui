@@ -34,7 +34,6 @@ export class Input extends RegularT<InputProps, InputState> {
 
     handleFocus($event) {
         this.$emit('focus', $event);
-
     }
 
     handleBlur($event) {
@@ -43,7 +42,7 @@ export class Input extends RegularT<InputProps, InputState> {
 
     handleKeyup(event: KeyboardEvent, value: string) {
         if (event.key === 'Enter') {
-            this.$emit('pressEnter', {event, value});
+            this.$emit('pressEnter', { event, value });
         }
 
         this.$emit('keyup', event, value);

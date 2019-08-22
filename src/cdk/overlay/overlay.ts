@@ -7,10 +7,13 @@ export const Overlay = Regular.extend({
     template: tpl,
     name: 'ui-cdk-overlay',
     config(props) {
-        this.data = Object.assign({
-            disabledScroll: true,
-            styles: styles
-        }, props);
+        this.data = Object.assign(
+            {
+                disabledScroll: true,
+                styles: styles,
+            },
+            props
+        );
     },
     handleMousedown(event) {
         this.$emit('mousedown', event);
@@ -21,5 +24,5 @@ export const Overlay = Regular.extend({
         }
 
         this.$emit('scroll', event);
-    }
+    },
 });

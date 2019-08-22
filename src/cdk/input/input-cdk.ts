@@ -25,28 +25,37 @@ export class InputCdk extends RegularT<InputCdkProps, InputCdkState> {
         data.value = data.value || data.defaultValue || '';
     }
 
-    handleFocus({event}: RegularEvent<FocusEvent>) {
-        const {value} = this.data;
+    handleFocus({ event }: RegularEvent<FocusEvent>) {
+        const { value } = this.data;
 
-        this.$emit('focus', {value, event});
+        this.$emit('focus', { value, event });
     }
 
-    handleBlur({event}: RegularEvent<FocusEvent>) {
-        const {value} = this.data;
+    handleBlur({ event }: RegularEvent<FocusEvent>) {
+        const { value } = this.data;
 
-        this.$emit('blur', {value, event});
+        this.$emit('blur', { value, event });
     }
 
-    handleKeydown({event}: RegularEvent<KeyboardEvent>) {
-        this.$emit('keydown', {event, value: (event.target as HTMLInputElement).value});
+    handleKeydown({ event }: RegularEvent<KeyboardEvent>) {
+        this.$emit('keydown', {
+            event,
+            value: (event.target as HTMLInputElement).value,
+        });
     }
 
-    handleKeyup({event}: RegularEvent<KeyboardEvent>) {
-        this.$emit('keyup', {event, value: (event.target as HTMLInputElement).value});
+    handleKeyup({ event }: RegularEvent<KeyboardEvent>) {
+        this.$emit('keyup', {
+            event,
+            value: (event.target as HTMLInputElement).value,
+        });
     }
 
-    handleInput({event}: RegularEvent<InputEvent>) {
-        this.$emit('input', {event, value: (event.target as HTMLInputElement).value});
+    handleInput({ event }: RegularEvent<InputEvent>) {
+        this.$emit('input', {
+            event,
+            value: (event.target as HTMLInputElement).value,
+        });
     }
 }
 

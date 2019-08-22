@@ -21,7 +21,7 @@ export interface TooltipStats extends Component {
 const TooltipContext = Regular.extend({
     template: `<div ref="context" class="hook-tooltip-context {styles.tooltipContext} tooltip-{placement} {className}">{#include title}</div>`,
     data: {
-        styles
+        styles,
     },
     init() {
         this.bindEvent();
@@ -37,7 +37,10 @@ const TooltipContext = Regular.extend({
             this.$emit('enter');
         };
         this.mouseoutHandle = ($event: MouseEvent) => {
-            if (contextRef && contextRef.contains($event.relatedTarget as Node)) {
+            if (
+                contextRef &&
+                contextRef.contains($event.relatedTarget as Node)
+            ) {
                 return;
             }
             this.$emit('out');
@@ -53,7 +56,7 @@ const TooltipContext = Regular.extend({
         contextRef.removeEventListener('mouseout', this.mouseoutHandle);
     },
     $show(position: ClientRect) {
-        const {placement} = this.data;
+        const { placement } = this.data;
 
         switch (placement) {
             case 'top':
@@ -79,7 +82,8 @@ const TooltipContext = Regular.extend({
     computePlacementLeft(position: ClientRect) {
         const contextRef: HTMLDivElement = this.$refs['context'];
 
-        const top = position.top + (position.height - contextRef.offsetHeight) / 2;
+        const top =
+            position.top + (position.height - contextRef.offsetHeight) / 2;
         const left = position.left + -(contextRef.offsetWidth + 10);
 
         contextRef.style.top = `${top}px`;
@@ -88,7 +92,8 @@ const TooltipContext = Regular.extend({
     computePlacementRight(position: ClientRect) {
         const contextRef: HTMLDivElement = this.$refs['context'];
 
-        const top = position.top + (position.height - contextRef.offsetHeight) / 2;
+        const top =
+            position.top + (position.height - contextRef.offsetHeight) / 2;
         const left = position.left + position.width + 10;
 
         contextRef.style.top = `${top}px`;
@@ -98,7 +103,8 @@ const TooltipContext = Regular.extend({
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         const top = position.top - (contextRef.offsetHeight + 10);
-        const left = position.left + (position.width - contextRef.offsetWidth) / 2;
+        const left =
+            position.left + (position.width - contextRef.offsetWidth) / 2;
 
         contextRef.style.top = `${top}px`;
         contextRef.style.left = `${left}px`;
@@ -107,13 +113,13 @@ const TooltipContext = Regular.extend({
         const contextRef: HTMLDivElement = this.$refs['context'];
 
         const top = position.top + position.height + 10;
-        const left = position.left + (position.width - contextRef.offsetWidth) / 2;
+        const left =
+            position.left + (position.width - contextRef.offsetWidth) / 2;
 
         contextRef.style.top = `${top}px`;
         contextRef.style.left = `${left}px`;
-    }
+    },
 });
-
 
 export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
     template = template;
@@ -133,15 +139,15 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
         styles: styles,
         trigger: 'hover',
         className: '',
-        style: {}
+        style: {},
     };
 
     config(data?: TooltipProps & TooltipStats) {
         this.tooltipContext = new TooltipContext({
             data: {
                 ...data,
-                className: data.tooltipClassName
-            }
+                className: data.tooltipClassName,
+            },
         });
         this.tooltipContext.$inject(document.body);
 
@@ -166,7 +172,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
     }
 
     initEvent() {
-        const {trigger} = this.data;
+        const { trigger } = this.data;
         this.showTooltipHandle = () => {
             this.showTooltip();
         };
@@ -182,21 +188,33 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
             case 'click':
                 break;
             case 'hover':
-                this.tooltipWrapRef.addEventListener('mouseenter', this.showTooltipHandle);
-                this.tooltipWrapRef.addEventListener('mouseout', this.hideTooltipHandle);
+                this.tooltipWrapRef.addEventListener(
+                    'mouseenter',
+                    this.showTooltipHandle
+                );
+                this.tooltipWrapRef.addEventListener(
+                    'mouseout',
+                    this.hideTooltipHandle
+                );
                 break;
         }
     }
 
     offEvent() {
-        const {trigger} = this.data;
+        const { trigger } = this.data;
 
         switch (trigger) {
             case 'click':
                 break;
             case 'hover':
-                this.tooltipWrapRef.removeEventListener('mouseenter', this.showTooltipHandle);
-                this.tooltipWrapRef.removeEventListener('mouseout', this.hideTooltipHandle);
+                this.tooltipWrapRef.removeEventListener(
+                    'mouseenter',
+                    this.showTooltipHandle
+                );
+                this.tooltipWrapRef.removeEventListener(
+                    'mouseout',
+                    this.hideTooltipHandle
+                );
                 break;
         }
     }
@@ -217,7 +235,7 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
         this.clearTimer();
 
         this.showTooltipTimer = setTimeout(() => {
-            const {visible} = this.data;
+            const { visible } = this.data;
 
             if (visible) {
                 return;
@@ -240,4 +258,3 @@ export class TooltipComponent extends RegularT<TooltipProps, TooltipStats> {
 }
 
 export const Tooltip = RegularT.extend(TooltipComponent);
-
