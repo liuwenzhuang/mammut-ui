@@ -9,10 +9,7 @@ module.exports = {
         filename: '[name].bundle.js'
     },
     resolve: {
-        extensions: ['.ts', '.js', '.html', '.css'],
-        alias: {
-            RegularX: path.join(basePath, 'src/regularX.ts')
-        }
+        extensions: ['.ts', '.js', '.html', '.css']
     },
     module: {
         rules: [
