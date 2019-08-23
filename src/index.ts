@@ -31,4 +31,4 @@ export {
     InputGroupComponent,
     Textarea,
     TextareaComponent,
-}from './components/input';
+} from './components/input';

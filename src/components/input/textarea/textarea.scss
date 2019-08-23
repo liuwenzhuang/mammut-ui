@@ -1,4 +1,4 @@
-@import "assets/scss/mixins/input.mixin";
+@import 'assets/scss/mixins/input.mixin';
 
 .textarea {
     textarea {
@@ -20,7 +20,8 @@
             @include input-active;
         }
 
-        &[disabled], &[disabled]:hover{
+        &[disabled],
+        &[disabled]:hover {
             @include input-disabled;
         }
 
@@ -46,5 +47,3 @@
         }
     }
 }
-
-

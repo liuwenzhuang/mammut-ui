@@ -21,8 +21,8 @@ $input-height: 32px;
 
 @mixin input-disabled {
     cursor: not-allowed;
-    background: #E0E0E0;
-    border-color: #CCCCCC;
+    background: #e0e0e0;
+    border-color: #cccccc;
 }
 
 @mixin input-error {

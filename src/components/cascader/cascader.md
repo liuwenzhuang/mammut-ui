@@ -22,15 +22,15 @@ const options = [
             {
                 label: '下级选项',
                 value: '下级选项的值',
-                disabled: true // 设置选项禁用
+                disabled: true, // 设置选项禁用
             },
             {
                 label: '下级选项2',
                 value: '下级选项2的值',
-                children: [] // 无限极嵌套
-            }
-        ]
-    }
+                children: [], // 无限极嵌套
+            },
+        ],
+    },
 ];
 ```
 
