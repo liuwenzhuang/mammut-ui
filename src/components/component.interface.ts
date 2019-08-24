@@ -1,5 +1,8 @@
-export interface Component {
+export interface Props {
     className: string;
-    styles: any;
     style: { [key: string]: string };
+}
+
+export interface Component {
+    styles: any;
 }

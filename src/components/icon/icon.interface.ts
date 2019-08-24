@@ -1,4 +1,4 @@
-import { Component } from '../component.interface';
+import { Component, Props } from '../component.interface';
 
 export enum IconSize {
     large = 'large',
@@ -6,7 +6,7 @@ export enum IconSize {
     small = 'small',
 }
 
-export interface IconProps {
+export interface IconProps extends Props {
     type: string;
     size: IconSize;
 }
