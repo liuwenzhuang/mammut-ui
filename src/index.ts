@@ -20,7 +20,7 @@ export {
 export { PopupMenu } from './components/popupMenu/popupMenu';
 export { Cascader } from './components/cascader/cascader';
 export { Checkbox, CheckboxComponent } from './components/checkbox';
-export { Tooltip, TooltipComponent } from './components/tooltip/tooltip';
+export { Tooltip, TooltipComponent, TooltipBody, TooltipBodyComponent } from './components/tooltip';
 export { Icon, IconSize, IconComponent } from './components/icon';
 export {
     Input,
