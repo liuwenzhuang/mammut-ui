@@ -9,24 +9,24 @@ module.exports = {
         path: path.resolve(basePath, 'lib'),
         filename: 'mammut-ui.js',
         library: 'MammutUI',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
     },
     externals: {
-        lodash : {
+        lodash: {
             commonjs: 'lodash',
             commonjs2: 'lodash',
             amd: 'lodash',
-            root: '_' // 指向全局变量
+            root: '_', // 指向全局变量
         },
         regularjs: {
             commonjs: 'regularjs',
             commonjs2: 'regularjs',
             amd: 'regularjs',
-            root: 'Regular'
-        }
+            root: 'Regular',
+        },
     },
     resolve: {
-        extensions: ['.ts', '.js', '.html', '.css']
+        extensions: ['.ts', '.js', '.html', '.css'],
     },
     module: {
         rules: [
@@ -35,9 +35,28 @@ module.exports = {
                 loader: 'awesome-typescript-loader',
                 options: {
                     reportFiles: [
-                        'src/**/*.{ts,tsx}'
-                    ]
-                }
+                        'src/**/*.{ts,tsx}',
+                    ],
+                },
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?t=.*)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        hmr: process.env.NODE_ENV === 'development',
+                    },
+                }, {
+                    loader: 'css-loader', // 将 CSS 转化成 CommonJS 模
+                }],
             },
             {
                 test: /\.scss$/,
@@ -53,30 +72,30 @@ module.exports = {
                         options: {
                             modules: {
                                 mode: 'local',
-                                localIdentName: '[local]--[hash:base64:5]'
-                            }
-                        }
+                                localIdentName: '[local]--[hash:base64:5]',
+                            },
+                        },
                     },
                     {
                         loader: 'sass-loader', // 将 Sass 编译成 CSS
                         options: {
-                            includePaths: [path.join(basePath, 'src')]
-                        }
-                    }]
+                            includePaths: [path.join(basePath, 'src')],
+                        },
+                    }],
             },
             {
                 test: /\.(html)$/,
                 use: {
-                    loader: 'html-loader'
-                }
-            }
-        ]
+                    loader: 'html-loader',
+                },
+            },
+        ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'mammut-ui.css'
-        })
+            filename: 'mammut-ui.css',
+        }),
     ],
     mode: 'production',
-    devtool: 'sourcemap'
+    devtool: 'sourcemap',
 };
