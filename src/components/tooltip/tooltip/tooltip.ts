@@ -1,9 +1,6 @@
 import * as _ from 'lodash';
 import { RegularT } from 'regularts';
-import {
-    TooltipBody,
-    TooltipBodyComponent,
-} from '../tooltip-body/tooltip-body';
+import { TooltipBody, TooltipBodyComponent, } from '../tooltip-body/tooltip-body';
 import { Placement, Trigger } from '../tooltip.enums';
 import { TooltipProps, TooltipState } from '../tooltip.interface';
 import template from './tooltip.html';
@@ -16,6 +13,7 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
     tooltipBodyRef: TooltipBody = null;
     showTooltipHandle = null;
     hideTooltipHandle = null;
+    toggleTooltipHandle = null;
     showTooltipTimer = null;
     hideTooltipTimer = null;
 
@@ -33,45 +31,12 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
     };
 
     config(data?: TooltipProps & TooltipState) {
-        const blackList = [
-            'className',
-            'preventDefault',
-            'style',
-            'styles',
-            'tooltipClassName',
-            'tooltipStyle',
-            'trigger',
-            'visible',
-        ];
-
-        this.tooltipBodyRef = new TooltipBodyComponent({
-            data: _.merge(
-                {
-                    className: this.data.tooltipClassName,
-                    style: this.data.tooltipStyle
-                },
-                _.pick(
-                    this.data,
-                    Object.keys(this.data).filter(
-                        key => blackList.indexOf(key) === -1
-                    )
-                )
-            ),
-        });
-        this.tooltipBodyRef.$inject(document.body);
-
-        this.tooltipBodyRef.$on('enter', () => {
-            this.clearTimer();
-        });
-
-        this.tooltipBodyRef.$on('out', () => {
-            this.hideTooltip();
-        });
+        this.injectTooltipBody();
     }
 
     init(data?: TooltipProps & TooltipState) {
         this.tooltipWrapRef = this.$refs.wrap;
-        this.initEvent();
+        this.bindEvent();
     }
 
     destroy() {
@@ -80,23 +45,58 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
         this.supr();
     }
 
-    initEvent() {
+    injectTooltipBody() {
         const { trigger } = this.data;
-        this.showTooltipHandle = () => {
-            this.showTooltip();
-        };
-        this.hideTooltipHandle = ($event: MouseEvent) => {
-            if (this.tooltipWrapRef.contains($event.relatedTarget as Node)) {
-                return;
-            }
+        const tooltipBodyProps = this.getTooltipBodyProps();
 
-            this.hideTooltip();
-        };
+        this.tooltipBodyRef = new TooltipBodyComponent({
+            data: tooltipBodyProps,
+        });
+        this.tooltipBodyRef.$inject(document.body);
+        this.tooltipBodyRef.$hide();
+
+        if (trigger === Trigger.hover) {
+            this.tooltipBodyRef.$on('enter', () => {
+                this.clearTimer();
+            });
+
+            this.tooltipBodyRef.$on('out', () => {
+                this.hideTooltip();
+            });
+        }
+    }
+
+    bindEvent() {
+        const { trigger } = this.data;
 
         switch (trigger) {
             case Trigger.click:
+                this.toggleTooltipHandle = () => {
+                    this.toggleTooltip();
+                };
+
+                this.tooltipWrapRef.addEventListener(
+                    'click',
+                    this.toggleTooltipHandle
+                );
+
                 break;
             case Trigger.hover:
+                this.showTooltipHandle = () => {
+                    this.showTooltip();
+                };
+                this.hideTooltipHandle = ($event: MouseEvent) => {
+                    if (
+                        this.tooltipWrapRef.contains(
+                            $event.relatedTarget as Node
+                        )
+                    ) {
+                        return;
+                    }
+
+                    this.hideTooltip();
+                };
+
                 this.tooltipWrapRef.addEventListener(
                     'mouseenter',
                     this.showTooltipHandle
@@ -163,6 +163,47 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
             this.tooltipBodyRef.$hide();
             this.data.visible = false;
         }, 100);
+    }
+
+    toggleTooltip() {
+        const { visible } = this.data;
+
+        if (visible) {
+            this.tooltipBodyRef.$hide();
+        } else {
+            const wrapPosition = this.tooltipWrapRef.getBoundingClientRect();
+            this.tooltipBodyRef.$show(wrapPosition);
+        }
+
+        this.$update({
+            visible: !visible,
+        });
+    }
+
+    private getTooltipBodyProps() {
+        const blackList = [
+            'className',
+            'preventDefault',
+            'style',
+            'styles',
+            'tooltipClassName',
+            'tooltipStyle',
+            'trigger',
+            'visible',
+        ];
+
+        return _.merge(
+            {
+                className: this.data.tooltipClassName,
+                style: this.data.tooltipStyle,
+            },
+            _.pick(
+                this.data,
+                Object.keys(this.data).filter(
+                    key => blackList.indexOf(key) === -1
+                )
+            )
+        );
     }
 }
 

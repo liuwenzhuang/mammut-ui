@@ -22,7 +22,7 @@
 
 ## ui-tooltip-body
 
-> tooltip 实际显示组件，调用时会直接显示在页面上，无交互功能
+> tooltip 实际显示组件，调用时会直接显示一个 tooltip
 
 ### API
 
