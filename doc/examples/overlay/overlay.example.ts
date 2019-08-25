@@ -1,9 +1,8 @@
-import Regular from 'regularjs';
+import { RegularT } from 'regularts';
+import template from './overlay.example.html';
 
-export const OverlayExample = Regular.extend({
-    template: `
-<div class="doc-wrap">
-    <div class="doc-sidebar"><MarkdownDoc url="/src/cdk/overlay/overlay.md"></MarkdownDoc></div>        
-</div>
-    `
-});
+export class OverlayExample extends RegularT{
+    template = template;
+}
+
+export const OverlayExampleComponent = RegularT.extend(OverlayExample);

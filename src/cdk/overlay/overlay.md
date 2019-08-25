@@ -8,15 +8,12 @@
 <ui-cdk-overlay on-mousedown="{...}" on-scroll="{...}">overlay</ui-cdk-overlay>
 ```
 
-## 传入参数
+## ui-cdk-overlay
 
-| 值            | 类型    | 描述                                  |
-| ------------- | ------- | ------------------------------------- |
-| disableScroll | boolean | 默认为 true. 设置后取消鼠标的滚动事件 |
+### API
 
-## 事件
-
-| 事件名称  | 描述                               |
-| --------- | ---------------------------------- |
-| mousedown | 鼠标在 overlay 上的 mousedown 事件 |
-| scroll    | 鼠标在 overlay 上的 scroll 事件    |
+| 参数           | 说明                               | 类型                       | 默认值 | 实现状态 |
+| -------------- | ---------------------------------- | -------------------------- | ------ | -------- |
+| disabledScroll | 设置后取消鼠标的滚动事件           | boolean                    | true   | 是       |
+| mousedown      | 鼠标在 overlay 上的 mousedown 事件 | (event:MouseEvent) => void | -      | 是       |
+| scroll         | 鼠标在 overlay 上的 scroll 事件    | (event) => void            | -      | 是       |

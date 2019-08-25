@@ -1,28 +1,31 @@
-import Regular from 'regularjs';
+import { RegularT } from 'regularts';
 
-import tpl from './overlay.html';
+import template from './overlay.html';
+import { OverlayProps, OverlayState } from './overlay.interface';
 import styles from './overlay.scss';
 
-export const Overlay = Regular.extend({
-    template: tpl,
-    name: 'ui-cdk-overlay',
-    config(props) {
-        this.data = Object.assign(
-            {
-                disabledScroll: true,
-                styles: styles,
-            },
-            props
-        );
-    },
+export class Overlay extends RegularT<OverlayProps, OverlayState> {
+    template = template;
+    name = 'ui-cdk-overlay';
+    data: OverlayProps & OverlayState = {
+        className: '',
+        disabledScroll: true,
+        style: {},
+        styles,
+    };
+
     handleMousedown(event) {
         this.$emit('mousedown', event);
-    },
+    }
+
     handleScroll(event) {
+        console.log(event);
         if (this.data.disabledScroll) {
             event.preventDefault();
         }
 
         this.$emit('scroll', event);
-    },
-});
+    }
+}
+
+export const OverlayCdkComponent = RegularT.extend(Overlay);

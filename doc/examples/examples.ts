@@ -10,7 +10,7 @@ import { IconExampleComponent } from './icon/icon.example';
 import { InputCdkExampleComponent } from './input-cdk/input-cdk.example';
 import { InputExampleComponent } from './input/input.example';
 import { MenuExample } from './menu/menu.example';
-import { OverlayExample } from './overlay/overlay.example';
+import { OverlayExampleComponent } from './overlay/overlay.example';
 import { PopupMenuExample } from './popupMenu/popupMenu.example';
 import { ToolTipExample } from './tooltip/tooltip.example';
 
@@ -51,7 +51,7 @@ export const ExampleRoutes = {
         view: MenuExample,
     },
     'examples.overlay': {
-        view: OverlayExample,
+        view: OverlayExampleComponent,
     },
     'examples.popup-menu': {
         view: PopupMenuExample,
