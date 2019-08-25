@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/lleohao/mammut-ui/compare/v0.5.0...v0.5.1) (2019-08-25)
+
+
+### Bug Fixes
+
+* **tooltip:** tooltip-body style 属性未生效 ([214e09a](https://github.com/lleohao/mammut-ui/commit/214e09a))
+
+
+
 # [0.5.0](https://github.com/lleohao/mammut-ui/compare/v0.4.0...v0.5.0) (2019-08-25)
 
 
