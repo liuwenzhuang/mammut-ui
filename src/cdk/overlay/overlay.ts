@@ -19,12 +19,15 @@ export class Overlay extends RegularT<OverlayProps, OverlayState> {
     }
 
     handleScroll(event) {
-        console.log(event);
         if (this.data.disabledScroll) {
             event.preventDefault();
         }
 
         this.$emit('scroll', event);
+    }
+
+    $getWrapElement(): HTMLDivElement {
+        return this.$refs.wrap;
     }
 }
 
