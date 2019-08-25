@@ -1,0 +1,61 @@
+@mixin horizontalCenter {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin verticalCenter {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+$arrow-size: 6px;
+
+.tooltipBody {
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+    padding: 6px 10px;
+
+    background-color: #000;
+    border-radius: 4px;
+
+    white-space: nowrap;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #ffffff;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        border: $arrow-size solid transparent;
+    }
+
+    &:global(.tooltip-body-top):after {
+        @include horizontalCenter;
+
+        border-top-color: #000000;
+        bottom: -2 * $arrow-size;
+    }
+
+    &:global(.tooltip-body-bottom):after {
+        @include horizontalCenter;
+
+        border-bottom-color: #000000;
+        top: -2 * $arrow-size;
+    }
+
+    &:global(.tooltip-body-right):after {
+        @include verticalCenter;
+
+        border-right-color: #000000;
+        left: -2 * $arrow-size;
+    }
+
+    &:global(.tooltip-body-left):after {
+        @include verticalCenter;
+
+        border-left-color: #000000;
+        right: -2 * $arrow-size;
+    }
+}

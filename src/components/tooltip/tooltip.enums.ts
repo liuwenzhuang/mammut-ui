@@ -8,5 +8,4 @@ export enum Placement {
 export enum Trigger {
     hover = 'hover',
     click = 'click',
-    custom = 'custom',
 }

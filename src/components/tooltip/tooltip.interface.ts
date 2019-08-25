@@ -1,9 +1,14 @@
 import { Component, Props } from '../component.interface';
 import { Placement, Trigger } from './tooltip.enums';
 
-export interface TooltipProps extends TooltipBodyProps {
-    trigger: Trigger;
+export interface TooltipProps extends Props {
+    placement: Placement;
+    preventDefault: boolean;
+    title: string;
     tooltipClassName: string;
+    tooltipStyle: { [key: string]: string };
+    trigger: Trigger;
+    visible: boolean;
 }
 
 export interface TooltipState extends Component {
@@ -15,4 +20,5 @@ export interface TooltipBodyProps extends Props {
     placement: Placement;
 }
 
-export interface TooltipBodyState extends Component {}
+export interface TooltipBodyState extends Component {
+}

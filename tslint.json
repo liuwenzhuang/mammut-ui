@@ -18,7 +18,8 @@
                 "typeLiterals": "ignore"
             },
             "esSpecCompliant": true
-        }]
+        }],
+        "arrow-parens": false
     },
     "rulesDirectory": []
 }

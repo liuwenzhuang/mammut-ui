@@ -19,7 +19,6 @@ export class TooltipBody extends RegularT<TooltipBodyProps, TooltipBodyState> {
 
     init() {
         this.bindEvent();
-        this.$hide();
     }
 
     desroy() {
@@ -28,33 +27,36 @@ export class TooltipBody extends RegularT<TooltipBodyProps, TooltipBodyState> {
     }
 
     bindEvent() {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
         this.mouseenterHandle = () => {
             this.$emit('enter');
         };
         this.mouseoutHandle = ($event: MouseEvent) => {
             if (
-                contextRef &&
-                contextRef.contains($event.relatedTarget as Node)
+                bodyRef &&
+                bodyRef.contains($event.relatedTarget as Node)
             ) {
                 return;
             }
             this.$emit('out');
         };
 
-        contextRef.addEventListener('mouseenter', this.mouseenterHandle);
-        contextRef.addEventListener('mouseout', this.mouseoutHandle);
+        bodyRef.addEventListener('mouseenter', this.mouseenterHandle);
+        bodyRef.addEventListener('mouseout', this.mouseoutHandle);
     }
 
     offEvent() {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
-        contextRef.removeEventListener('mouseenter', this.mouseenterHandle);
-        contextRef.removeEventListener('mouseout', this.mouseoutHandle);
+        bodyRef.removeEventListener('mouseenter', this.mouseenterHandle);
+        bodyRef.removeEventListener('mouseout', this.mouseoutHandle);
     }
 
     $show(position: ClientRect) {
         const { placement } = this.data;
+        const bodyRef: HTMLDivElement = this.$refs.body;
+
+        bodyRef.style.position = 'fixed';
 
         switch (placement) {
             case 'top':
@@ -73,54 +75,54 @@ export class TooltipBody extends RegularT<TooltipBodyProps, TooltipBodyState> {
     }
 
     $hide() {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
-        contextRef.style.left = '-9999px';
-        contextRef.style.top = '-9999px';
+        bodyRef.style.left = '-9999px';
+        bodyRef.style.top = '-9999px';
     }
 
     computePlacementLeft(position: ClientRect) {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
         const top =
-            position.top + (position.height - contextRef.offsetHeight) / 2;
-        const left = position.left + -(contextRef.offsetWidth + 10);
+            position.top + (position.height - bodyRef.offsetHeight) / 2;
+        const left = position.left + -(bodyRef.offsetWidth + 10);
 
-        contextRef.style.top = `${top}px`;
-        contextRef.style.left = `${left}px`;
+        bodyRef.style.top = `${top}px`;
+        bodyRef.style.left = `${left}px`;
     }
 
     computePlacementRight(position: ClientRect) {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
         const top =
-            position.top + (position.height - contextRef.offsetHeight) / 2;
+            position.top + (position.height - bodyRef.offsetHeight) / 2;
         const left = position.left + position.width + 10;
 
-        contextRef.style.top = `${top}px`;
-        contextRef.style.left = `${left}px`;
+        bodyRef.style.top = `${top}px`;
+        bodyRef.style.left = `${left}px`;
     }
 
     computePlacementTop(position: ClientRect) {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
-        const top = position.top - (contextRef.offsetHeight + 10);
+        const top = position.top - (bodyRef.offsetHeight + 10);
         const left =
-            position.left + (position.width - contextRef.offsetWidth) / 2;
+            position.left + (position.width - bodyRef.offsetWidth) / 2;
 
-        contextRef.style.top = `${top}px`;
-        contextRef.style.left = `${left}px`;
+        bodyRef.style.top = `${top}px`;
+        bodyRef.style.left = `${left}px`;
     }
 
     computePlacementBottom(position: ClientRect) {
-        const contextRef: HTMLDivElement = this.$refs.context;
+        const bodyRef: HTMLDivElement = this.$refs.body;
 
         const top = position.top + position.height + 10;
         const left =
-            position.left + (position.width - contextRef.offsetWidth) / 2;
+            position.left + (position.width - bodyRef.offsetWidth) / 2;
 
-        contextRef.style.top = `${top}px`;
-        contextRef.style.left = `${left}px`;
+        bodyRef.style.top = `${top}px`;
+        bodyRef.style.left = `${left}px`;
     }
 }
 

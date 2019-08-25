@@ -1,8 +1,12 @@
+import * as _ from 'lodash';
 import { RegularT } from 'regularts';
-import { TooltipBody, TooltipBodyComponent } from '../tooltip-body/tooltip-body';
+import {
+    TooltipBody,
+    TooltipBodyComponent,
+} from '../tooltip-body/tooltip-body';
 import { Placement, Trigger } from '../tooltip.enums';
-import template from './tooltip.html';
 import { TooltipProps, TooltipState } from '../tooltip.interface';
+import template from './tooltip.html';
 import styles from './tooltip.scss';
 
 export class Tooltip extends RegularT<TooltipProps, TooltipState> {
@@ -18,20 +22,41 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
     data: TooltipProps & TooltipState = {
         className: '',
         placement: Placement.top,
+        preventDefault: false,
         style: {},
         styles,
         title: '',
         tooltipClassName: '',
+        tooltipStyle: {},
         trigger: Trigger.hover,
         visible: false,
     };
 
     config(data?: TooltipProps & TooltipState) {
+        const blackList = [
+            'className',
+            'preventDefault',
+            'style',
+            'styles',
+            'tooltipClassName',
+            'tooltipStyle',
+            'trigger',
+            'visible',
+        ];
+
         this.tooltipBodyRef = new TooltipBodyComponent({
-            data: {
-                ...data,
-                className: data.tooltipClassName,
-            },
+            data: _.merge(
+                {
+                    className: this.data.tooltipClassName,
+                    style: this.data.tooltipStyle
+                },
+                _.pick(
+                    this.data,
+                    Object.keys(this.data).filter(
+                        key => blackList.indexOf(key) === -1
+                    )
+                )
+            ),
         });
         this.tooltipBodyRef.$inject(document.body);
 
