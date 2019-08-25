@@ -1,5 +1,5 @@
 import { InputCdkProps, InputCdkState } from '../../cdk/input';
-import { Component, Props } from '../component.interface';
+import { State, Props } from '../../component.interface';
 import { InputAddonPlacement, InputSize } from './input.enums';
 
 export interface InputProps extends InputCdkProps {
@@ -18,7 +18,7 @@ export interface InputAddonProps extends Props {
     placement: InputAddonPlacement;
 }
 
-export interface InputAddonState extends Component {
+export interface InputAddonState extends State {
 }
 
 export interface InputGroupProps extends Props {
@@ -26,7 +26,7 @@ export interface InputGroupProps extends Props {
     size: InputSize;
 }
 
-export interface InputGroupState extends Component {
+export interface InputGroupState extends State {
 }
 
 export interface InputTextareaProps extends InputCdkProps {

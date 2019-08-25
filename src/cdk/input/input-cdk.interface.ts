@@ -1,4 +1,4 @@
-import { Component, Props } from '../../components/component.interface';
+import { State, Props } from '../../component.interface';
 
 export interface InputCdkProps extends Props {
     defaultValue: string;
@@ -11,5 +11,5 @@ export interface InputCdkProps extends Props {
     value: string;
 }
 
-export interface InputCdkState extends Component {
+export interface InputCdkState extends State {
 }

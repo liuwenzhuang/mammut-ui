@@ -3,6 +3,6 @@ export interface Props {
     style: { [key: string]: string };
 }
 
-export interface Component {
+export interface State {
     styles: any;
 }
