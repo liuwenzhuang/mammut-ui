@@ -1,3 +1,35 @@
+# [0.6.0](https://github.com/lleohao/mammut-ui/compare/v0.4.0...v0.6.0) (2019-09-25)
+
+
+### Bug Fixes
+
+* **tooltip:** tooltip-body style 属性未生效 ([214e09a](https://github.com/lleohao/mammut-ui/commit/214e09a))
+
+
+### Features
+
+* **icon:** 添加 click 事件 ([874a10f](https://github.com/lleohao/mammut-ui/commit/874a10f))
+* **icon:** 添加图标组件 ([cbc6216](https://github.com/lleohao/mammut-ui/commit/cbc6216)), closes [#5](https://github.com/lleohao/mammut-ui/issues/5)
+* **icon, tooltip:** 添加 style 属性，用于自定义样式 ([682ae42](https://github.com/lleohao/mammut-ui/commit/682ae42))
+* **input:** input 组件添加 pressEnter 事件 ([5709b18](https://github.com/lleohao/mammut-ui/commit/5709b18))
+* **input:** 添加 allowClear 支持 ([50fc922](https://github.com/lleohao/mammut-ui/commit/50fc922)), closes [#2](https://github.com/lleohao/mammut-ui/issues/2)
+* **input:** 添加 prefix 和 suffix 用于添加前后图标 ([237ccd4](https://github.com/lleohao/mammut-ui/commit/237ccd4)), closes [#2](https://github.com/lleohao/mammut-ui/issues/2)
+* update icon ([ed270d8](https://github.com/lleohao/mammut-ui/commit/ed270d8))
+* **input:** 添加 textarea 组件 ([33a3a24](https://github.com/lleohao/mammut-ui/commit/33a3a24))
+* **input:** 添加 ui-input 组件及示例 ([7d22ef6](https://github.com/lleohao/mammut-ui/commit/7d22ef6))
+* **input:** 添加 ui-input-group 和 ui-input-addon 组件，用于实现前后标签功能 ([5992b55](https://github.com/lleohao/mammut-ui/commit/5992b55)), closes [#2](https://github.com/lleohao/mammut-ui/issues/2)
+* **input:** 调整 ui-input 事件 ([a0db766](https://github.com/lleohao/mammut-ui/commit/a0db766))
+* **input-cdk:** 去掉 input-cdk 中的 input 事件，添加 keydown、keyup 事件 ([f21c6a9](https://github.com/lleohao/mammut-ui/commit/f21c6a9)), closes [#2](https://github.com/lleohao/mammut-ui/issues/2)
+* **input-cdk:** 添加 value 属性做双向绑定 ([3bdc418](https://github.com/lleohao/mammut-ui/commit/3bdc418)), closes [#2](https://github.com/lleohao/mammut-ui/issues/2)
+* **input-cdk:** 调整 ui-cdk-input 事件 ([a21e8a6](https://github.com/lleohao/mammut-ui/commit/a21e8a6))
+* **input-cdk:** 重构 ui-cdk-input 组件 ([24e7a16](https://github.com/lleohao/mammut-ui/commit/24e7a16))
+* **input,input-cdk:** 添加 name，id 属性 ([f513aac](https://github.com/lleohao/mammut-ui/commit/f513aac))
+* 添加文件 ([5a2a69c](https://github.com/lleohao/mammut-ui/commit/5a2a69c))
+* **overlay:** 添加 $getWrapElement 获取 overlay 组件的外层包裹元素 ([679272c](https://github.com/lleohao/mammut-ui/commit/679272c))
+* **tooltip:** 新增 ui-tooltip-body 组件，调整 tooltip 组件目录结构 ([c916a81](https://github.com/lleohao/mammut-ui/commit/c916a81))
+
+
+
 ## [0.5.1](https://github.com/lleohao/mammut-ui/compare/v0.5.0...v0.5.1) (2019-08-25)
 
 
