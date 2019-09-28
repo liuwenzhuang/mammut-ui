@@ -1110,6 +1110,27 @@
       "font_class": "ndi",
       "unicode": "e6e7",
       "unicode_decimal": 59111
+    },
+    {
+      "icon_id": "11071459",
+      "name": "import",
+      "font_class": "import",
+      "unicode": "e6e8",
+      "unicode_decimal": 59112
+    },
+    {
+      "icon_id": "11071540",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e6e9",
+      "unicode_decimal": 59113
+    },
+    {
+      "icon_id": "11071581",
+      "name": "new",
+      "font_class": "new",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
     }
   ]
 }

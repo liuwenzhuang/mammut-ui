@@ -26,7 +26,7 @@ class IconExample extends RegularT <{}, State> {
     analyzeIconList(text: string) {
         const iconList = [];
         text.split('\n').forEach(line => {
-            const result = /^\.ui-icon-(.*?):/.exec(line);
+            const result = /^\.icon-(.*?):/.exec(line);
 
             if (result) {
                 iconList.push(result[1]);
