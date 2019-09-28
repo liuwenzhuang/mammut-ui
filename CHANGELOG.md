@@ -1,3 +1,13 @@
+# [0.7.0](https://github.com/lleohao/mammut-ui/compare/v0.5.1...v0.7.0) (2019-09-28)
+
+
+### Features
+
+* update icon ([ed270d8](https://github.com/lleohao/mammut-ui/commit/ed270d8))
+* **icon:** update icon ([92fedf3](https://github.com/lleohao/mammut-ui/commit/92fedf3))
+
+
+
 # [0.6.0](https://github.com/lleohao/mammut-ui/compare/v0.4.0...v0.6.0) (2019-09-25)
 
 
