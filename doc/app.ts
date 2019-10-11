@@ -1,6 +1,7 @@
-import Regular from 'regularjs';
 import marked from 'marked';
+import Regular from 'regularjs';
 
+import 'github-markdown-css/github-markdown.css';
 import styles from './app.scss';
 
 /**
@@ -14,7 +15,7 @@ Regular.extend({
     config(props) {
         this.data = Object.assign({
             html: '',
-            styles
+            styles,
         }, props);
 
         this.fetchFile(this.data.url);
@@ -25,12 +26,12 @@ Regular.extend({
             .then(body => body.text())
             .then(text => {
                 this.$update({
-                    html: marked(text)
+                    html: marked(text),
                 });
             });
-    }
+    },
 });
 
 export const App = Regular.extend({
-    template: '<MarkdownDoc url="README.md"></MarkdownDoc>'
+    template: '<MarkdownDoc url="README.md"></MarkdownDoc>',
 });

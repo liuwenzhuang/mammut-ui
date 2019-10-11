@@ -6,8 +6,8 @@ module.exports = {
     stats: 'minimal',
     entry: path.join(basePath, 'doc/index.ts'),
     output: {
-        path: path.resolve(basePath, 'dist'),
-        filename: '[name].bundle.js'
+        path: path.resolve(basePath, 'documents'),
+        filename: '[name].bundle.js',
     },
     resolve: {
         extensions: ['.ts', '.js', '.html', '.css']
@@ -66,15 +66,11 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        port: 8444,
-        open: true
-    },
     devtool: 'source-map',
-    mode: 'development',
+    mode: 'production',
     plugins: [
         new htmlWebpackPlugin({
-            template: path.join(__dirname, '../doc/index.ejs'),
+            template: path.join(basePath, 'doc/index.ejs'),
         })
     ],
 };
