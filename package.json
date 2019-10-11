@@ -1,6 +1,6 @@
 {
     "name": "mammut-ui",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "description": "bdms fe components",
     "main": "lib/mammut-ui.js",
     "scripts": {

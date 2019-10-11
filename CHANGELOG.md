@@ -1,3 +1,17 @@
+# [0.8.0](https://github.com/lleohao/mammut-ui/compare/v0.7.0...v0.8.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* **tooltip:** tooltip 组件销毁事件名拼写错误 ([e4594e3](https://github.com/lleohao/mammut-ui/commit/e4594e3))
+
+
+### Features
+
+* **icon:** 更新图标文件 ([4e5f53a](https://github.com/lleohao/mammut-ui/commit/4e5f53a))
+
+
+
 # [0.7.0](https://github.com/lleohao/mammut-ui/compare/v0.5.1...v0.7.0) (2019-09-28)
 
 
