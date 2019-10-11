@@ -17,6 +17,7 @@ gulp.task('copy', () => {
     return gulp.src([
         'src/**/*.md',
         'src/assets/**/*.svg',
+        'src/components/icon/fonts/*',
         'doc/**/*.md',
         'README.md'
     ], {
