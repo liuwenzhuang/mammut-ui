@@ -21,7 +21,7 @@ export class TooltipBody extends RegularT<TooltipBodyProps, TooltipBodyState> {
         this.bindEvent();
     }
 
-    desroy() {
+    destroy() {
         this.offEvent();
         this.supr();
     }
