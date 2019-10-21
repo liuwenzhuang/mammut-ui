@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/lleohao/mammut-ui/compare/v0.8.0...v0.9.0) (2019-10-21)
+
+
+### Features
+
+* **icon:** add all icon ([f284aad](https://github.com/lleohao/mammut-ui/commit/f284aad))
+
+
+
 # [0.8.0](https://github.com/lleohao/mammut-ui/compare/v0.7.0...v0.8.0) (2019-10-11)
 
 
