@@ -1138,6 +1138,13 @@
       "font_class": "upload",
       "unicode": "e602",
       "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "11377633",
+      "name": "all",
+      "font_class": "all",
+      "unicode": "e603",
+      "unicode_decimal": 58883
     }
   ]
 }
