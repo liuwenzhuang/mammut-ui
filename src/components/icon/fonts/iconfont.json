@@ -1145,6 +1145,111 @@
       "font_class": "all",
       "unicode": "e603",
       "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11411948",
+      "name": "solid-star",
+      "font_class": "star_hover",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "11411949",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "12403101",
+      "name": "离线开发中心",
+      "font_class": "lixiankaifazhongxin",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "12403111",
+      "name": "任务运维中心",
+      "font_class": "renwuyunweizhongxin",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "12403112",
+      "name": "实时计算",
+      "font_class": "shishijisuan",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12403113",
+      "name": "数据地图",
+      "font_class": "shujuditu",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "12403114",
+      "name": "datastream",
+      "font_class": "datastream",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "12403115",
+      "name": "easydesign",
+      "font_class": "easydesign",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "12403117",
+      "name": "数据质量",
+      "font_class": "shujuzhiliang",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "12403118",
+      "name": "指标系统",
+      "font_class": "zhibiaoxitong",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12403119",
+      "name": "数据传输",
+      "font_class": "shujuchuanshu",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "12403120",
+      "name": "数据资产中心",
+      "font_class": "shujuzichanzhongxin",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "12421615",
+      "name": "xiangmuzhongxin",
+      "font_class": "xiangmuzhongxin",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    },
+    {
+      "icon_id": "12421616",
+      "name": "gongzuotai",
+      "font_class": "gongzuotai",
+      "unicode": "e6ec",
+      "unicode_decimal": 59116
+    },
+    {
+      "icon_id": "12421652",
+      "name": "gongzuotai-empty",
+      "font_class": "gongzuotai-empty",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
     }
   ]
 }
