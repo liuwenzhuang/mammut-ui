@@ -20,3 +20,15 @@
     ├── scripts - 脚本文件
     └── src - 源文件
 ```
+
+## 发布
+
+1. 执行 `npm version [<newversion>]` 名称升级版本
+
+    ```shell script
+    npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+    ```
+   
+2. 执行 `npm run build` 打包
+
+3. 执行 `npm run publish` 发布
