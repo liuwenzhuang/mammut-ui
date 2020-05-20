@@ -9,7 +9,7 @@
         "build": "rm -rf lib && webpack --config scripts/webpack.config.build.js",
         "build:doc": "gulp",
         "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-        "prepublish": "npm run build"
+        "prepublish": "yarn build"
     },
     "files": [
         "lib"
