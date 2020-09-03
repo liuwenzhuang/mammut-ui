@@ -2,7 +2,7 @@ import Regular from 'regularjs';
 
 import template from './menu.html';
 import styles from './menu.scss';
-import * as _ from 'lodash';
+import _ from '../../lodash';
 
 const dom = Regular.dom;
 

@@ -1,7 +1,23 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
 
 const basePath = path.resolve(__dirname, '../');
+
+const plugins = [
+    new MiniCssExtractPlugin({
+        filename: 'mammut-ui.css',
+    }),
+];
+
+if (process.env.analyse) {
+    plugins.push(
+        new BundleAnalyzerPlugin({
+            analyzerPort: Number(process.env.analyse) || 8889,
+        })
+    );
+}
 
 module.exports = {
     entry: path.join(basePath, 'src/index.ts'),
@@ -12,12 +28,6 @@ module.exports = {
         libraryTarget: 'umd',
     },
     externals: {
-        lodash: {
-            commonjs: 'lodash',
-            commonjs2: 'lodash',
-            amd: 'lodash',
-            root: '_', // 指向全局变量
-        },
         regularjs: {
             commonjs: 'regularjs',
             commonjs2: 'regularjs',
@@ -91,11 +101,7 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'mammut-ui.css',
-        }),
-    ],
+    plugins,
     mode: 'production',
     devtool: 'sourcemap',
 };

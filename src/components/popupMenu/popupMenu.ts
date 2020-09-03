@@ -1,5 +1,5 @@
 import Regular from 'regularjs';
-import _ from 'lodash';
+import _ from '../../lodash';
 
 import template from './popupMenu.html';
 import { transformStyles } from '../../utils';

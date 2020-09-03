@@ -1,5 +1,5 @@
 import Regular from 'regularjs';
-import _ from 'lodash';
+import _ from '../../lodash';
 
 import template from './cascader.html';
 import styles from './cascader.scss';

@@ -1,6 +1,9 @@
-import * as _ from 'lodash';
+import _ from '../../../lodash';
 import { RegularT } from 'regularts';
-import { TooltipBody, TooltipBodyComponent, } from '../tooltip-body/tooltip-body';
+import {
+    TooltipBody,
+    TooltipBodyComponent,
+} from '../tooltip-body/tooltip-body';
 import { Placement, Trigger } from '../tooltip.enums';
 import { TooltipProps, TooltipState } from '../tooltip.interface';
 import template from './tooltip.html';

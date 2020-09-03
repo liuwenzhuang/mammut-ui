@@ -2,7 +2,7 @@ import Regular from 'regularjs';
 import template from './list.html';
 import styles from './list.scss';
 
-import _ from 'lodash';
+import _ from '../../lodash';
 
 export const List = Regular.extend({
     template,
