@@ -6,6 +6,13 @@
   "description": "mammut图标按规范处理",
   "glyphs": [
     {
+      "icon_id": "17373131",
+      "name": "advanced-run",
+      "font_class": "advanced-run",
+      "unicode": "e722",
+      "unicode_decimal": 59170
+    },
+    {
       "icon_id": "15385259",
       "name": "public-resource",
       "font_class": "public-resource",
