@@ -6,6 +6,20 @@
   "description": "mammut图标按规范处理",
   "glyphs": [
     {
+      "icon_id": "21517694",
+      "name": "folder-ai",
+      "font_class": "folder-ai",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "21517679",
+      "name": "folder-default",
+      "font_class": "folder-default",
+      "unicode": "e72f",
+      "unicode_decimal": 59183
+    },
+    {
       "icon_id": "18822680",
       "name": "subscription",
       "font_class": "subscription",
