@@ -1,6 +1,6 @@
 # 组件开发工具 (CDK)
 
-- [Overlay](/#/examples/overlay)
+- [Overlay](#/examples/overlay)
 
 - [Menu](/#/examples/menu)
 
