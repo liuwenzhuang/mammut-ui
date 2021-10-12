@@ -13,6 +13,7 @@ import { MenuExample } from './menu/menu.example';
 import { OverlayExampleComponent } from './overlay/overlay.example';
 import { PopupMenuExample } from './popupMenu/popupMenu.example';
 import { ToolTipExample } from './tooltip/tooltip.example';
+import { TagExample } from './tag/tag.example';
 
 const Nav = Regular.extend({
     template: '<MarkdownDoc url="/doc/examples/nav.md"></MarkdownDoc>',
@@ -26,7 +27,7 @@ export const ExampleMain = Regular.extend({
 });
 
 export const ExampleRoutes = {
-    'examples': {
+    examples: {
         view: ExampleMain,
     },
     'examples.cascader': {
@@ -58,5 +59,8 @@ export const ExampleRoutes = {
     },
     'examples.tooltip': {
         view: ToolTipExample,
+    },
+    'examples.tag': {
+        view: TagExample,
     },
 };

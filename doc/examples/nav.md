@@ -19,3 +19,5 @@
 - [Icon](/#/examples/icon)
 
 - [Input](/#/examples/input)
+
+- [Tag](/#/examples/tag)

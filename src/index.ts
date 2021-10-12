@@ -37,3 +37,6 @@ export {
     Textarea,
     TextareaComponent,
 } from './components/input';
+export {
+    TagComponent
+} from './components/tag'

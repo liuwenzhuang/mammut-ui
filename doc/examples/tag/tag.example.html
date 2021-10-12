@@ -1,0 +1,55 @@
+<div class="doc-wrap">
+    <div class="doc-sidebar">
+        <MarkdownDoc url="/src/components/tag/tag.md"></MarkdownDoc>
+    </div>
+    <div class="doc-main">
+        <ExamplePreview>
+            <Example.Main>
+                <ui-tag>
+                    <span>默认</span>
+                </ui-tag>
+                <ui-tag borderColor="#9cc1ff" color="#337eff" bgColor="#e6f7ff">
+                    <span>#9cc1ff</span>
+                </ui-tag>
+                <ui-tag borderColor="#ffd1a0" color="#fb8d18" bgColor="#fff7e6">
+                    <span>#ffd1a0</span>
+                </ui-tag>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    基本使用
+                </header>
+                <main>
+                    <p>
+                        通过 color 控制颜色；bgColor 控制背景色；borderColor
+                        控制边框色
+                    </p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+
+        <ExamplePreview>
+            <Example.Main>
+                <ui-tag bgColor="#f50">
+                    <span>#f50</span>
+                </ui-tag>
+                <ui-tag bgColor="#2db7f5">
+                    <span>#2db7f5</span>
+                </ui-tag>
+                <ui-tag bgColor="#87d068">
+                    <span>#87d068</span>
+                </ui-tag>
+            </Example.Main>
+
+            <Example.details>
+                <header>
+                    仅指定 bgColor
+                </header>
+                <main>
+                    <p>通过 bgColor 控制背景色，如不指定 color，默认为 #fff</p>
+                </main>
+            </Example.details>
+        </ExamplePreview>
+    </div>
+</div>
