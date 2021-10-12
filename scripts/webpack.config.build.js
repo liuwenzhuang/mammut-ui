@@ -44,9 +44,7 @@ module.exports = {
                 test: /\.ts$/,
                 loader: 'awesome-typescript-loader',
                 options: {
-                    reportFiles: [
-                        'src/**/*.{ts,tsx}',
-                    ],
+                    reportFiles: ['src/**/*.{ts,tsx}'],
                 },
             },
             {
@@ -59,14 +57,17 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        hmr: process.env.NODE_ENV === 'development',
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development',
+                        },
                     },
-                }, {
-                    loader: 'css-loader', // 将 CSS 转化成 CommonJS 模
-                }],
+                    {
+                        loader: 'css-loader', // 将 CSS 转化成 CommonJS 模
+                    },
+                ],
             },
             {
                 test: /\.scss$/,
@@ -90,8 +91,10 @@ module.exports = {
                         loader: 'sass-loader', // 将 Sass 编译成 CSS
                         options: {
                             includePaths: [path.join(basePath, 'src')],
+                            implementation: require('sass'),
                         },
-                    }],
+                    },
+                ],
             },
             {
                 test: /\.(html)$/,
