@@ -1,6 +1,7 @@
 const path = require('path');
 const basePath = path.resolve(__dirname, '../');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     stats: 'minimal',
