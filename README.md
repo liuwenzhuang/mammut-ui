@@ -4,7 +4,7 @@
 
 1. 安装依赖 `npm install`
 2. 运行开发服务器 `npm start`
-3. [组件示例目录](/#/examples/main-nav)
+3. [组件示例目录](#/examples/main-nav)
 
 ## 项目结构
 
