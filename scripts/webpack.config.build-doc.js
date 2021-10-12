@@ -8,6 +8,7 @@ module.exports = {
     output: {
         path: path.resolve(basePath, 'documents'),
         filename: '[name].bundle.js',
+        publicPath: '/mammut-ui/',
     },
     resolve: {
         extensions: ['.ts', '.js', '.html', '.css'],
