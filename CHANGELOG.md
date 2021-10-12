@@ -1,3 +1,23 @@
+# [0.15.0](https://github.com/liuwenzhuang/mammut-ui/compare/v0.9.0...v0.15.0) (2021-10-12)
+
+
+### Bug Fixes
+
+* adjust advance run icon ([81e66f5](https://github.com/liuwenzhuang/mammut-ui/commit/81e66f5d6ce037758f6f5e0216346d2d2b620a08))
+
+
+### Features
+
+* add advance run icon ([4b712ee](https://github.com/liuwenzhuang/mammut-ui/commit/4b712ee13b1329979d3476b9f2e2e58bf01ef115))
+* add tag component ([313d56a](https://github.com/liuwenzhuang/mammut-ui/commit/313d56ad28bb41208fc6409153227fe3faecf3da))
+* replace advance run icon ([f8e7928](https://github.com/liuwenzhuang/mammut-ui/commit/f8e7928b0178228214cd2d672ae942e8b052f4a7))
+* **icon:** 更新图标 ([4398152](https://github.com/liuwenzhuang/mammut-ui/commit/4398152625ff199964058327e43e1b747b9a3352))
+* **icon:** update icon ([5d87782](https://github.com/liuwenzhuang/mammut-ui/commit/5d877826a757ddd2fa77f736afb6d48f33c88df2))
+* **lodash:** partial import lodash ([227462c](https://github.com/liuwenzhuang/mammut-ui/commit/227462c2e399b0d677f82ee2c4aa7179e2def67e))
+* **yarn:** 更改npm to yarn ([7b23963](https://github.com/liuwenzhuang/mammut-ui/commit/7b23963c284f91c20d4b5486c0843b9a4d46a290))
+
+
+
 # [0.13.0](https://github.com/lleohao/mammut-ui/compare/v0.11.0...v0.13.0) (2020-03-19)
 
 
