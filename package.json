@@ -8,6 +8,7 @@
         "start": "webpack-dev-server --config scripts/webpack.config.js",
         "build": "rm -rf lib && webpack --config scripts/webpack.config.build.js",
         "build:doc": "gulp",
+        "publish:doc": "bash ./publish_to_ghpages.sh",
         "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
         "prepublish": "yarn build"
     },

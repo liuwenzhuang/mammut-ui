@@ -1,11 +1,5 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
-const clean = require('gulp-clean');
-
-gulp.task('clean', () => {
-    return gulp.src('documents', { read: false, allowEmpty: true })
-        .pipe(clean());
-});
 
 gulp.task('webpack', () => {
     return gulp.src('doc/index.ts')
@@ -25,4 +19,4 @@ gulp.task('copy', () => {
     }).pipe(gulp.dest('documents'));
 });
 
-gulp.task('default', gulp.series(['clean', 'webpack', 'copy']));
+gulp.task('default', gulp.series(['webpack', 'copy']));
