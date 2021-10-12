@@ -1,6 +1,7 @@
 const path = require('path');
 const basePath = path.resolve(__dirname, '../');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     stats: 'minimal',
@@ -81,6 +82,9 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             template: path.join(__dirname, '../doc/index.ejs'),
+        }),
+        new webpack.DefinePlugin({
+            GHPAGES_PREFIX: JSON.stringify(''),
         }),
     ],
 };

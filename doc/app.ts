@@ -36,5 +36,5 @@ Regular.extend({
 });
 
 export const App = Regular.extend({
-    template: '<MarkdownDoc url="README.md"></MarkdownDoc>',
+    template: '<MarkdownDoc url="/README.md"></MarkdownDoc>',
 });

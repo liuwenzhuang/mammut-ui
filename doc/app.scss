@@ -3,7 +3,9 @@
     padding: 0;
 }
 
-html, body, :global(#app) {
+html,
+body,
+:global(#app) {
     height: 100%;
 }
 
@@ -13,8 +15,8 @@ body {
 
 :global(#app) > div:last-child {
     height: calc(100% - 52px);
+    overflow-y: auto;
 }
-
 
 :global .markdown {
     padding: 16px;
@@ -27,7 +29,7 @@ body {
 
 :global .doc-sidebar {
     width: 40%;
-    border-right: 1px solid #DEDEDE;
+    border-right: 1px solid #dedede;
     overflow: auto;
 }
 
