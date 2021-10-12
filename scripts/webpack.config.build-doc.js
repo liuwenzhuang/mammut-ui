@@ -79,5 +79,8 @@ module.exports = {
         new htmlWebpackPlugin({
             template: path.join(basePath, 'doc/index.ejs'),
         }),
+        new webpack.DefinePlugin({
+            GHPAGES_PREFIX: JSON.stringify('/mammut-ui'),
+        }),
     ],
 };

@@ -15,6 +15,8 @@ import { PopupMenuExample } from './popupMenu/popupMenu.example';
 import { ToolTipExample } from './tooltip/tooltip.example';
 import { TagExample } from './tag/tag.example';
 
+const logoHref = require('../../src/assets/images/mammut_white.svg');
+
 const Nav = Regular.extend({
     template: '<MarkdownDoc url="/doc/examples/nav.md"></MarkdownDoc>',
 });
@@ -22,6 +24,7 @@ const Nav = Regular.extend({
 export const ExampleMain = Regular.extend({
     data: {
         styles,
+        logoHref,
     },
     template,
 });

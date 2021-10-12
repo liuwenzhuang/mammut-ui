@@ -13,12 +13,15 @@ Regular.extend({
     name: 'MarkdownDoc',
     template: '<div class="markdown markdown-body" r-html="{html}"></div>',
     config(props) {
-        this.data = Object.assign({
-            html: '',
-            styles,
-        }, props);
-
-        this.fetchFile(this.data.url);
+        this.data = Object.assign(
+            {
+                html: '',
+                styles,
+            },
+            props
+        );
+        const url = (GHPAGES_PREFIX || '') + this.data.url;
+        this.fetchFile(url);
     },
     fetchFile(url) {
         fetch(url)
