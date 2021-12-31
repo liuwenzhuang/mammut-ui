@@ -1,17 +1,14 @@
 # MammutUI 猛犸组件系统
 
-- [文档地址](https://liuwenzhuang.github.io/mammut-ui/)
-- [组件导航](https://liuwenzhuang.github.io/mammut-ui/#/examples/main-nav)
-
-## 本地运行
+## 运行
 
 1. 安装依赖 `npm install`
 2. 运行开发服务器 `npm start`
-3. [组件导航](#/examples/main-nav)
+3. [组件示例目录](#/examples/main-nav)
 
 ## 项目结构
 
-```bash
+```
     ├── .eslintrc
     ├── README.md
     ├── assets - 静态资源文件

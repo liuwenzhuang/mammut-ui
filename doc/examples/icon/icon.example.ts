@@ -3,19 +3,19 @@ import styles from './icon.example.scss';
 import { RegularT } from 'regularts';
 
 interface State {
-    iconList: string[];
-    styles: any;
+    iconList: string[],
+    styles: any
 }
 
-class IconExample extends RegularT<{}, State> {
+class IconExample extends RegularT <{}, State> {
     template = template;
     data: {} & State = {
         iconList: [],
-        styles,
+        styles
     };
 
     config(): void {
-        fetch('/src/components/icon/fonts/iconfont.js')
+        fetch('/src/components/icon/fonts/iconfont.css')
             .then(res => res)
             .then(body => body.text())
             .then(text => {
@@ -25,20 +25,21 @@ class IconExample extends RegularT<{}, State> {
 
     analyzeIconList(text: string) {
         const iconList = [];
-        const iconTypeReg = /id=['"]icon-(.*?)['"]/g;
-        let matchResult;
-        while ((matchResult = iconTypeReg.exec(text))) {
-            iconList.push(matchResult[1]);
-        }
+        text.split('\n').forEach(line => {
+            const result = /^\.icon-(.*?):/.exec(line);
+
+            if (result) {
+                iconList.push(result[1]);
+            }
+        });
 
         this.$update({
-            iconList,
+            iconList
         });
     }
 
     onClick(type) {
-        navigator.clipboard
-            .writeText(type)
+        navigator.clipboard.writeText(type)
             .then(() => {
                 console.log('文本已经成功复制到剪切板');
             })

@@ -2,6 +2,11 @@
     display: inline-block;
     cursor: pointer;
 
+    font-family: 'FontMammut', serif !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     &:global(.large) {
         font-size: 24px;
     }
@@ -12,13 +17,5 @@
 
     &:global(.small) {
         font-size: 12px;
-    }
-
-    .svg-icon-symbol {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
     }
 }
