@@ -1,8 +1,7 @@
 @font-face {
   font-family: "FontMammut"; /* Project id 1357962 */
-  src: url('iconfont.woff2?t=1620718939712') format('woff2'),
-       url('iconfont.woff?t=1620718939712') format('woff'),
-       url('iconfont.ttf?t=1620718939712') format('truetype');
+  src: url('iconfont.woff2?t=1640917071814') format('woff2'),
+       url('iconfont.woff?t=1640917071814') format('woff');
 }
 
 .FontMammut {
