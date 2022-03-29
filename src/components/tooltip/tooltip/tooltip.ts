@@ -9,6 +9,17 @@ import { TooltipProps, TooltipState } from '../tooltip.interface';
 import template from './tooltip.html';
 import styles from './tooltip.scss';
 
+const tooltipFns = [];
+
+export function destroyAll() {
+    while (tooltipFns.length) {
+        const tooltipIns = tooltipFns.pop();
+        if (tooltipIns) {
+            tooltipIns.destroy.call(tooltipIns);
+        }
+    }
+}
+
 export class Tooltip extends RegularT<TooltipProps, TooltipState> {
     template = template;
     name = 'ui-tooltip';
@@ -40,6 +51,7 @@ export class Tooltip extends RegularT<TooltipProps, TooltipState> {
     init(data?: TooltipProps & TooltipState) {
         this.tooltipWrapRef = this.$refs.wrap;
         this.bindEvent();
+        tooltipFns.push(this);
     }
 
     destroy() {

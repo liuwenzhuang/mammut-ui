@@ -106,5 +106,4 @@ module.exports = {
     },
     plugins,
     mode: 'production',
-    devtool: 'sourcemap',
 };

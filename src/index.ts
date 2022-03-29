@@ -25,6 +25,7 @@ export {
     TooltipComponent,
     TooltipBody,
     TooltipBodyComponent,
+    destroyAll as destroyAllTooltip,
 } from './components/tooltip';
 export { Icon, IconSize, IconComponent } from './components/icon';
 export {
